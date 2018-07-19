@@ -1,14 +1,9 @@
-import { mount, createLocalVue } from '@vue/test-utils';
 import GOTextField from '@/go-default/input-output/GOTextField.vue';
-import Vuetify from 'vuetify';
+import { test } from '@/test/utils';
 
-describe('GOTextField.vue', () => {
-    const localVue = createLocalVue();
-    localVue.use(Vuetify); // Registering Vuetify components
-
+test('GOTextField.vue', ({ mount }) => {
     it('should switch between view & edit mode', () => {
         const wrapper = mount(GOTextField, {
-            localVue: localVue,
             propsData: {
                 viewMode: true
             }
@@ -16,19 +11,18 @@ describe('GOTextField.vue', () => {
 
         // Checking INPUT exists & is disabled
         let input = wrapper.find('input');
-        input.should.exist;
-        input.attributes().disabled.should.equal('disabled');
+        expect(input).toBeDefined();
+        expect(input.attributes().disabled).toEqual('disabled');
 
         wrapper.setProps({ viewMode: false });
 
         input = wrapper.find('input');
-        input.should.exist;
-        input.attributes().should.not.have.property('disabled');
+        expect(input).toBeDefined();
+        expect(input.attributes()).not.toHaveProperty('disabled');
     });
 
     it('should emit change', () => {
         const wrapper = mount(GOTextField, {
-            localVue: localVue,
             propsData: {
                 viewMode: false, // setting edit
                 value: ''
@@ -39,14 +33,12 @@ describe('GOTextField.vue', () => {
         input.element.value = 'New Value';
         input.trigger('input');
 
-        wrapper.emitted().input.should.exist;
-        wrapper.emitted().input.length.should.equal(1);
-        wrapper.emitted().input[0].should.deep.equal(['New Value']);
+        expect(wrapper.emitted().input).toHaveLength(1);
+        expect(wrapper.emitted().input[0]).toEqual(['New Value']);
     });
 
     it('should authorize change only in edit mode', () => {
         const wrapper = mount(GOTextField, {
-            localVue: localVue,
             propsData: {
                 viewMode: true, // setting edit
                 value: ''

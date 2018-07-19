@@ -1,10 +1,9 @@
 import GODatePickerField from '@/go-default/input-output/GODatePickerField.vue';
-import { test } from '../../util';
+import { test } from '@/test/utils';
 
 test('GODatePickerField.vue', ({ mount }) => {
     it('should switch between view & edit mode', () => {
         const wrapper = mount(GODatePickerField, {
-            localVue: localVue,
             propsData: {
                 viewMode: true
             }
@@ -12,30 +11,27 @@ test('GODatePickerField.vue', ({ mount }) => {
 
         // Checking INPUT exists & is disabled
         let input = wrapper.find('input');
-        input.should.exist;
-        input.attributes().disabled.should.equal('disabled');
+        expect(input).toBeDefined();
+        expect(input.attributes().disabled).toEqual('disabled');
 
         wrapper.setProps({ viewMode: false });
 
         input = wrapper.find('input');
-        input.should.exist;
-        input.attributes().should.not.have.property('disabled');
+        expect(input).toBeDefined();
+        expect(input.attributes()).not.toHaveProperty('disabled');
     });
 
-    it('should have a date picker available when enabled & clicked', () => {
+    it('should display a date picker when enabled & clicked', () => {
         const wrapper = mount(GODatePickerField, {
-            localVue: localVue,
             propsData: {
                 viewMode: false
             }
         });
 
-        console.log('***** BEFORE INPUT   ****');
         const input = wrapper.find('input');
         input.trigger('click');
-        console.log('***** AFTER CLICK   ****');
 
         const datePicker = wrapper.find('.v-picker--date');
-        datePicker.should.exist;
+        expect(datePicker).toBeDefined();
     });
 });

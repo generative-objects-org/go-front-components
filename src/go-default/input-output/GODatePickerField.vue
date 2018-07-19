@@ -41,6 +41,11 @@
 </template>
 
 <script>
+import {
+    getDashedDate,
+    getDateFromSlashedDate
+} from '@/utils/dateConverters.js';
+
 export default {
     props: {
         value: Date,
@@ -60,15 +65,13 @@ export default {
         displayedValue() {
             if (!this.value) return null;
 
-            const [year, month, day] = this.getDashedDate(this.value).split(
-                '-'
-            );
+            const [year, month, day] = getDashedDate(this.value).split('-');
             return `${day}/${month}/${year}`;
         },
         // We use the dashed version of the provided Date object (this.value)
         // The object is expected to be a day only
         dashedDate() {
-            return this.tempDashedDate || this.getDashedDate(this.value);
+            return this.tempDashedDate || getDashedDate(this.value);
         }
     },
     methods: {
@@ -78,54 +81,21 @@ export default {
             this.menu = false;
         },
         onTextFieldChange(val) {
-            let inputDate = this.getDateFromSlashedDate(val);
+            let inputDate = getDateFromSlashedDate(val);
             if (inputDate != null) {
-                this.tempDashedDate = this.getDashedDate(inputDate);
+                this.tempDashedDate = getDashedDate(inputDate);
             }
         },
         onTextFieldBlur(evt) {
-            let inputDate = this.getDateFromSlashedDate(evt.target.value);
+            let inputDate = getDateFromSlashedDate(evt.target.value);
             if (inputDate != null) {
                 this.$emit('input', inputDate);
             }
             this.tempDashedDate = null;
-        },
+        }
 
         // Returns the JS Date Object corresponding to the parameter if it is
         // a valid DD/MM/YYYY Date input, null otherwise
-        getDateFromSlashedDate(slashedDate) {
-            let parts = slashedDate.split('/');
-            if (parts.length !== 3) return null;
-
-            let day = parseInt(parts[0]),
-                month = parseInt(parts[1]),
-                year = parseInt(parts[2]);
-            if (isNaN(day) || isNaN(month) || isNaN(year)) {
-                return null;
-            }
-
-            let monthString = month < 10 ? '0' + month : month.toString();
-            let dayString = day < 10 ? '0' + day : day.toString();
-
-            let date = new Date(
-                `${year}-${monthString}-${dayString}T00:00:00Z`
-            );
-
-            if (date instanceof Date && !isNaN(date)) {
-                return date;
-            }
-            return null;
-        },
-        getDashedDate(val) {
-            if (!val || !(val instanceof Date) || isNaN(val)) return null;
-            return (
-                val.getFullYear() +
-                '-' +
-                ('0' + (val.getMonth() + 1)).slice(-2) +
-                '-' +
-                ('0' + val.getDate()).slice(-2)
-            );
-        }
     },
     watch: {
         // Making sure to resync everything is current value is changed from outside
