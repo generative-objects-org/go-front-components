@@ -11,13 +11,13 @@ test('GOTextField.vue', ({ mount }) => {
 
         // Checking INPUT exists & is disabled
         let input = wrapper.find('input');
-        expect(input).toBeDefined();
+        expect(input.exists()).toBe(true);
         expect(input.attributes().disabled).toEqual('disabled');
 
         wrapper.setProps({ viewMode: false });
 
         input = wrapper.find('input');
-        expect(input).toBeDefined();
+        expect(input.exists()).toBe(true);
         expect(input.attributes()).not.toHaveProperty('disabled');
     });
 
