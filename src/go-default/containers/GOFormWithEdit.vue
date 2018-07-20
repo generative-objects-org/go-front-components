@@ -30,8 +30,7 @@ export default {
     props: {
         initialMode: String,
         currentItem: Object,
-        noDataText: String,
-        busName: String
+        noDataText: String
     },
     data() {
         return {
