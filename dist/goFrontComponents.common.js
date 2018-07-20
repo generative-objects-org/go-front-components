@@ -1100,7 +1100,7 @@ function src_install() {
     install();
 }
 
-/* harmony default export */ var src = (GOFrontComponents = {
+/* harmony default export */ var src = ({
     install: src_install
 });
 

@@ -4,6 +4,6 @@ function install() {
     installGODefault();
 }
 
-export default (GOFrontComponents = {
+export default {
     install: install
-});
+};
