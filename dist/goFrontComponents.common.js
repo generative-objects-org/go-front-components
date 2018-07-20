@@ -1312,4 +1312,4 @@ module.exports = require("vue");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=goFrontComponents.common.js.map
+//# sourceMappingURL=GOFrontComponents.common.js.map

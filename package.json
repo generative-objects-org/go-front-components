@@ -31,7 +31,7 @@
     },
     "scripts": {
         "test": "cross-env NODE_ENV=test jest -i --verbose --silent",
-        "build": "vue-cli-service build --target lib --name goFrontComponents src/index.js"
+        "build": "vue-cli-service build --target lib --name GOFrontComponents src/index.js"
     },
     "jest": {
         "verbose": false,

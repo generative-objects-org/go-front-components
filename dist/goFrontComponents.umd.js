@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["goFrontComponents"] = factory(require("vue"));
+		exports["GOFrontComponents"] = factory(require("vue"));
 	else
-		root["goFrontComponents"] = factory(root["Vue"]);
+		root["GOFrontComponents"] = factory(root["Vue"]);
 })(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_i7_w__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -1322,4 +1322,4 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_i7_w__;
 
 /******/ });
 });
-//# sourceMappingURL=goFrontComponents.umd.js.map
+//# sourceMappingURL=GOFrontComponents.umd.js.map
