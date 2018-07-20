@@ -1,0 +1,8 @@
+test:
+  stage: test
+  script: 
+    - call npm install
+    - call npm run test
+  cache:
+    paths:
+      - node_modules/
