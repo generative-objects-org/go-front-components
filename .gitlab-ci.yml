@@ -15,8 +15,8 @@ before_script:
 test:
     stage: test
     script:
-        - call npm install
-        - call npm run test
+        - npm install
+        - run test
     cache:
         paths:
             - node_modules/
