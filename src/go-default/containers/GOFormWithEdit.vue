@@ -13,18 +13,10 @@
 </template>
 
 <script>
-export const MODES = {
-    VIEW_MODE: 'VIEW_MODE',
-    EDIT_MODE: 'EDIT_MODE'
-};
+import { FormComponentMixin } from 'go-front-libs';
 
-export const FORM_ACTIONS = {
-    CANCEL: 'cancelEdit',
-    CREATE_NEW: 'createNew',
-    DELETE: 'delete',
-    ENTER_EDIT: 'enterEdit',
-    SAVE: 'save'
-};
+let MODES = FormComponentMixin.MODES;
+let FORM_ACTIONS = FormComponentMixin.FORM_ACTIONS;
 
 export default {
     props: {
