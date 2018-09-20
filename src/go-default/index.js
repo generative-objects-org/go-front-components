@@ -11,6 +11,8 @@ import GOColumnLayout from './containers/GOColumnLayout.vue';
 import GOGrid from './containers/GOGrid.vue';
 import GOGridColumn from './containers/GOGridColumn.vue';
 import GOBreadCrumb from './input-output/GOBreadCrumb.vue';
+import GOTabContainer from './containers/GOTabContainer';
+import GOTab from './containers/GOTab';
 
 const componentsToRegister = {
     'go-button': GOButton,
@@ -23,6 +25,9 @@ const componentsToRegister = {
     'go-grid': GOGrid,
     'go-grid-column': GOGridColumn,
     'go-breadcrumb': GOBreadCrumb
+    'go-text': GOText,
+    'go-tab': GOTab,
+    'go-tab-container': GOTabContainer
 };
 
 export function install() {
