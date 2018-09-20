@@ -44,7 +44,7 @@
 import {
     getDashedDate,
     getDateFromSlashedDate
-} from '@/utils/dateConverters.js';
+} from '../../utils/dateConverters.js';
 
 export default {
     props: {
