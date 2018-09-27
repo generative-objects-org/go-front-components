@@ -123,12 +123,12 @@ var go_default = __webpack_require__("9yk8");
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("i7/w");
 var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOFormWithEdit.vue?vue&type=template&id=7d42dba0&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOFormWithEdit.vue?vue&type=template&id=c887dcec&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-form',[(_vm.currentItem)?_vm._t("default",null,{item:_vm.currentItem,viewMode:_vm.isViewMode}):_vm._e(),(!_vm.currentItem && _vm.noDataTextComp)?_c('div',[_vm._v("\n        "+_vm._s(_vm.noDataTextComp)+"\n    ")]):_vm._e(),_vm._t("form-actions",null,{actions:_vm.defaultActions,viewMode:_vm.isViewMode})],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/go-default/containers/GOFormWithEdit.vue?vue&type=template&id=7d42dba0&
+// CONCATENATED MODULE: ./src/go-default/containers/GOFormWithEdit.vue?vue&type=template&id=c887dcec&
 
 // EXTERNAL MODULE: external "go-front-libs"
 var external_go_front_libs_ = __webpack_require__("YR7q");
@@ -164,11 +164,11 @@ let FORM_ACTIONS = external_go_front_libs_["FormComponentMixin"].FORM_ACTIONS;
         return {
             currentMode: MODES.VIEW_MODE,
             defaultActions: {
-                [FORM_ACTIONS.CANCEL]: this.cancelEdit,
-                [FORM_ACTIONS.CREATE_NEW]: this.createNew,
-                [FORM_ACTIONS.DELETE]: this.delete,
+                [FORM_ACTIONS.CANCEL_EDIT]: this.cancelEdit,
+                [FORM_ACTIONS.CREATE_ITEM]: this.createNew,
+                [FORM_ACTIONS.DELETE_ITEM]: this.delete,
                 [FORM_ACTIONS.ENTER_EDIT]: this.enterEdit,
-                [FORM_ACTIONS.SAVE]: this.save
+                [FORM_ACTIONS.SAVE_ITEM]: this.save
             },
             formItem: null // item set when editing
         };

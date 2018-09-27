@@ -28,11 +28,11 @@ export default {
         return {
             currentMode: MODES.VIEW_MODE,
             defaultActions: {
-                [FORM_ACTIONS.CANCEL]: this.cancelEdit,
-                [FORM_ACTIONS.CREATE_NEW]: this.createNew,
-                [FORM_ACTIONS.DELETE]: this.delete,
+                [FORM_ACTIONS.CANCEL_EDIT]: this.cancelEdit,
+                [FORM_ACTIONS.CREATE_ITEM]: this.createNew,
+                [FORM_ACTIONS.DELETE_ITEM]: this.delete,
                 [FORM_ACTIONS.ENTER_EDIT]: this.enterEdit,
-                [FORM_ACTIONS.SAVE]: this.save
+                [FORM_ACTIONS.SAVE_ITEM]: this.save
             },
             formItem: null // item set when editing
         };
