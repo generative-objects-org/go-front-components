@@ -1,34 +1,36 @@
 import './index.css';
 import Vue from 'vue';
 
-import GOForm from './containers/GOFormWithEdit.vue';
+import GOBreadCrumb from './input-output/GOBreadCrumb.vue';
 import GOButton from './actions/GOButton.vue';
-import GOTextField from './input-output/GOTextField.vue';
-import GOText from './input-output/GOText.vue';
 import GOCheckboxField from './input-output/GOCheckboxField.vue';
-import GODatePickerField from './input-output/GODatePickerField.vue';
-import GOSelectionField from './selection/GOSelectionField.vue';
 import GOColumnLayout from './containers/GOColumnLayout.vue';
+import GODatePickerField from './input-output/GODatePickerField.vue';
+import GOForm from './containers/GOFormWithEdit.vue';
 import GOGrid from './containers/GOGrid.vue';
 import GOGridColumn from './containers/GOGridColumn.vue';
-import GOBreadCrumb from './input-output/GOBreadCrumb.vue';
-import GOTabContainer from './containers/GOTabContainer';
+import GOIcon from './actions/GOIcon.vue';
+import GOSelectionField from './selection/GOSelectionField.vue';
 import GOTab from './containers/GOTab';
+import GOTabContainer from './containers/GOTabContainer';
+import GOText from './input-output/GOText.vue';
+import GOTextField from './input-output/GOTextField.vue';
 
 const componentsToRegister = {
+    'go-breadcrumb': GOBreadCrumb,
     'go-button': GOButton,
-    'go-form': GOForm,
-    'go-text-field': GOTextField,
     'go-checkbox': GOCheckboxField,
-    'go-date-field': GODatePickerField,
-    'go-selection-field': GOSelectionField,
     'go-column-layout': GOColumnLayout,
+    'go-date-field': GODatePickerField,
+    'go-form': GOForm,
     'go-grid': GOGrid,
     'go-grid-column': GOGridColumn,
-    'go-breadcrumb': GOBreadCrumb,
-    'go-text': GOText,
+    'go-icon': GOIcon,
+    'go-selection-field': GOSelectionField,
     'go-tab': GOTab,
-    'go-tab-container': GOTabContainer
+    'go-tab-container': GOTabContainer,
+    'go-text': GOText,
+    'go-text-field': GOTextField
 };
 
 export function install() {
