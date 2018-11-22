@@ -2,7 +2,7 @@
     <div>
          <div v-if="viewMode"  class="go-text-view">
              <v-select
-                :items="displayedCollection"
+                :items="dataCollection"
                 :value="value"
                 :label="label"
                 disabled
@@ -10,7 +10,7 @@
         </div>
         <div v-if="editMode">
               <v-select
-                :items="displayedCollection"
+                :items="dataCollection"
                 :value="value"
                 :label="label"
                 @change="onChange"
@@ -26,7 +26,7 @@ export default {
         value: [Number, String],
         viewMode: Boolean,
         label: String,
-        displayedCollection: Array, // text / value collection
+        dataCollection: Array, // text / value collection
         loading: Boolean
     },
     data() {

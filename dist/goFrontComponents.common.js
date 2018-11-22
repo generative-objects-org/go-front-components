@@ -955,12 +955,12 @@ var GOIcon_component = normalizeComponent(
 )
 
 /* harmony default export */ var GOIcon = (GOIcon_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/selection/GOSelectionField.vue?vue&type=template&id=231f1fdf&
-var GOSelectionFieldvue_type_template_id_231f1fdf_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[(_vm.viewMode)?_c('div',{staticClass:"go-text-view"},[_c('v-select',{attrs:{"items":_vm.displayedCollection,"value":_vm.value,"label":_vm.label,"disabled":""}})],1):_vm._e(),(_vm.editMode)?_c('div',[_c('v-select',{attrs:{"items":_vm.displayedCollection,"value":_vm.value,"label":_vm.label,"loading":_vm.loading},on:{"change":_vm.onChange}})],1):_vm._e()])}
-var GOSelectionFieldvue_type_template_id_231f1fdf_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/selection/GOSelectionField.vue?vue&type=template&id=27b8e14c&
+var GOSelectionFieldvue_type_template_id_27b8e14c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[(_vm.viewMode)?_c('div',{staticClass:"go-text-view"},[_c('v-select',{attrs:{"items":_vm.dataCollection,"value":_vm.value,"label":_vm.label,"disabled":""}})],1):_vm._e(),(_vm.editMode)?_c('div',[_c('v-select',{attrs:{"items":_vm.dataCollection,"value":_vm.value,"label":_vm.label,"loading":_vm.loading},on:{"change":_vm.onChange}})],1):_vm._e()])}
+var GOSelectionFieldvue_type_template_id_27b8e14c_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/go-default/selection/GOSelectionField.vue?vue&type=template&id=231f1fdf&
+// CONCATENATED MODULE: ./src/go-default/selection/GOSelectionField.vue?vue&type=template&id=27b8e14c&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/selection/GOSelectionField.vue?vue&type=script&lang=js&
 //
@@ -991,7 +991,7 @@ var GOSelectionFieldvue_type_template_id_231f1fdf_staticRenderFns = []
         value: [Number, String],
         viewMode: Boolean,
         label: String,
-        displayedCollection: Array, // text / value collection
+        dataCollection: Array, // text / value collection
         loading: Boolean
     },
     data() {
@@ -1026,8 +1026,8 @@ var GOSelectionFieldvue_type_style_index_0_lang_css_ = __webpack_require__("9L8D
 
 var GOSelectionField_component = normalizeComponent(
   selection_GOSelectionFieldvue_type_script_lang_js_,
-  GOSelectionFieldvue_type_template_id_231f1fdf_render,
-  GOSelectionFieldvue_type_template_id_231f1fdf_staticRenderFns,
+  GOSelectionFieldvue_type_template_id_27b8e14c_render,
+  GOSelectionFieldvue_type_template_id_27b8e14c_staticRenderFns,
   false,
   null,
   null,
