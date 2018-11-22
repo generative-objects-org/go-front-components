@@ -33,7 +33,7 @@ test('GOSelectionField.vue', ({ mount }) => {
             propsData: {
                 viewMode: false, // setting edit
                 value: '',
-                displayedCollection: dataInSelection
+                dataCollection: dataInSelection
             }
         });
 
