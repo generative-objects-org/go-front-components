@@ -3,14 +3,14 @@
          <div v-if="viewMode" class="go-text-view">
              <v-checkbox
                 :label="label"
-                :input-value="checked"
+                :input-value="value"
                 disabled
             ></v-checkbox>
         </div>
         <div v-if="editMode">
               <v-checkbox
                 :label="label"
-                :input-value="checked"
+                :input-value="value"
                 v-on:change="onChange"
             ></v-checkbox>
         </div>
@@ -20,11 +20,11 @@
 <script>
 export default {
     model: {
-        prop: 'checked',
+        prop: 'value',
         event: 'change'
     },
     props: {
-        checked: Boolean,
+        value: Boolean,
         viewMode: Boolean,
         label: String
     },

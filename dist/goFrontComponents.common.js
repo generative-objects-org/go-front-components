@@ -321,12 +321,12 @@ var GOButton_component = normalizeComponent(
 )
 
 /* harmony default export */ var GOButton = (GOButton_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/input-output/GOCheckboxField.vue?vue&type=template&id=735d01f4&
-var GOCheckboxFieldvue_type_template_id_735d01f4_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[(_vm.viewMode)?_c('div',{staticClass:"go-text-view"},[_c('v-checkbox',{attrs:{"label":_vm.label,"input-value":_vm.checked,"disabled":""}})],1):_vm._e(),(_vm.editMode)?_c('div',[_c('v-checkbox',{attrs:{"label":_vm.label,"input-value":_vm.checked},on:{"change":_vm.onChange}})],1):_vm._e()])}
-var GOCheckboxFieldvue_type_template_id_735d01f4_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/input-output/GOCheckboxField.vue?vue&type=template&id=56c24e5e&
+var GOCheckboxFieldvue_type_template_id_56c24e5e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[(_vm.viewMode)?_c('div',{staticClass:"go-text-view"},[_c('v-checkbox',{attrs:{"label":_vm.label,"input-value":_vm.value,"disabled":""}})],1):_vm._e(),(_vm.editMode)?_c('div',[_c('v-checkbox',{attrs:{"label":_vm.label,"input-value":_vm.value},on:{"change":_vm.onChange}})],1):_vm._e()])}
+var GOCheckboxFieldvue_type_template_id_56c24e5e_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/go-default/input-output/GOCheckboxField.vue?vue&type=template&id=735d01f4&
+// CONCATENATED MODULE: ./src/go-default/input-output/GOCheckboxField.vue?vue&type=template&id=56c24e5e&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/input-output/GOCheckboxField.vue?vue&type=script&lang=js&
 //
@@ -351,11 +351,11 @@ var GOCheckboxFieldvue_type_template_id_735d01f4_staticRenderFns = []
 
 /* harmony default export */ var GOCheckboxFieldvue_type_script_lang_js_ = ({
     model: {
-        prop: 'checked',
+        prop: 'value',
         event: 'change'
     },
     props: {
-        checked: Boolean,
+        value: Boolean,
         viewMode: Boolean,
         label: String
     },
@@ -392,8 +392,8 @@ var GOCheckboxFieldvue_type_style_index_0_lang_css_ = __webpack_require__("rxKg"
 
 var GOCheckboxField_component = normalizeComponent(
   input_output_GOCheckboxFieldvue_type_script_lang_js_,
-  GOCheckboxFieldvue_type_template_id_735d01f4_render,
-  GOCheckboxFieldvue_type_template_id_735d01f4_staticRenderFns,
+  GOCheckboxFieldvue_type_template_id_56c24e5e_render,
+  GOCheckboxFieldvue_type_template_id_56c24e5e_staticRenderFns,
   false,
   null,
   null,

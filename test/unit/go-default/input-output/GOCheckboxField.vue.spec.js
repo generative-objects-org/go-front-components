@@ -24,7 +24,7 @@ test('GOCheckboxField.vue', ({ mount }) => {
         const wrapper = mount(GOCheckboxField, {
             propsData: {
                 viewMode: false, // setting edit
-                checked: false
+                value: false
             }
         });
 
@@ -39,7 +39,7 @@ test('GOCheckboxField.vue', ({ mount }) => {
         const wrapper = mount(GOCheckboxField, {
             propsData: {
                 viewMode: true, // setting edit
-                checked: false
+                value: false
             }
         });
         const input = wrapper.find('input');
