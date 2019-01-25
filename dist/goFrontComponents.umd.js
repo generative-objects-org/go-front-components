@@ -663,17 +663,28 @@ var GODatePickerField_component = normalizeComponent(
 )
 
 /* harmony default export */ var GODatePickerField = (GODatePickerField_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOFormWithEdit.vue?vue&type=template&id=c887dcec&
-var GOFormWithEditvue_type_template_id_c887dcec_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-form',[(_vm.currentItem)?_vm._t("default",null,{item:_vm.currentItem,viewMode:_vm.isViewMode}):_vm._e(),(!_vm.currentItem && _vm.noDataTextComp)?_c('div',[_vm._v("\n        "+_vm._s(_vm.noDataTextComp)+"\n    ")]):_vm._e(),_vm._t("form-actions",null,{actions:_vm.defaultActions,viewMode:_vm.isViewMode})],2)}
-var GOFormWithEditvue_type_template_id_c887dcec_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOFormWithEdit.vue?vue&type=template&id=50658163&
+var GOFormWithEditvue_type_template_id_50658163_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-form',[(_vm.currentItem && !_vm.isLoading)?_vm._t("default",null,{item:_vm.currentItem,viewMode:_vm.isViewMode}):_vm._e(),(!_vm.currentItem && _vm.noDataTextComp && !_vm.isLoading)?_c('div',[_vm._v(_vm._s(_vm.noDataTextComp))]):_vm._e(),(_vm.isLoading)?_c('div',{staticClass:"d-flex"},[_c('v-progress-circular',{attrs:{"size":50,"color":"primary","indeterminate":""}})],1):_vm._e(),(!_vm.isLoading)?_vm._t("form-actions",null,{actions:_vm.defaultActions,viewMode:_vm.isViewMode}):_vm._e()],2)}
+var GOFormWithEditvue_type_template_id_50658163_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/go-default/containers/GOFormWithEdit.vue?vue&type=template&id=c887dcec&
+// CONCATENATED MODULE: ./src/go-default/containers/GOFormWithEdit.vue?vue&type=template&id=50658163&
 
 // EXTERNAL MODULE: external "go-front-libs"
 var external_go_front_libs_ = __webpack_require__("YR7q");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOFormWithEdit.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -698,8 +709,10 @@ let FORM_ACTIONS = external_go_front_libs_["FormComponentMixin"].FORM_ACTIONS;
     props: {
         initialMode: String,
         currentItem: Object,
-        noDataText: String
+        noDataText: String,
+        loading: Boolean
     },
+
     data() {
         return {
             currentMode: MODES.VIEW_MODE,
@@ -728,8 +741,11 @@ let FORM_ACTIONS = external_go_front_libs_["FormComponentMixin"].FORM_ACTIONS;
         isEditMode() {
             return this.currentMode === MODES.EDIT_MODE;
         },
+        isLoading() {
+            return this.loading !== undefined ? this.loading : false;
+        },
         noDataTextComp() {
-            return this.noDataText ? this.noDataText : '';
+            return this.noDataText ? this.noDataText : "";
         }
     },
 
@@ -738,30 +754,30 @@ let FORM_ACTIONS = external_go_front_libs_["FormComponentMixin"].FORM_ACTIONS;
         cancelEdit() {
             if (this.isEditMode) {
                 this.currentMode = MODES.VIEW_MODE;
-                this.$emit('cancel-edit', this.currentItem);
+                this.$emit("cancel-edit", this.currentItem);
             }
         },
         createNew() {
             if (this.isViewMode) {
                 this.currentMode = MODES.EDIT_MODE;
-                this.$emit('create-item');
+                this.$emit("create-item");
             }
         },
         delete() {
             if (this.isViewMode) {
-                this.$emit('delete-item', this.currentItem);
+                this.$emit("delete-item", this.currentItem);
             }
         },
         enterEdit() {
             if (this.isViewMode) {
                 this.currentMode = MODES.EDIT_MODE;
-                this.$emit('enter-edit', this.currentItem);
+                this.$emit("enter-edit", this.currentItem);
             }
         },
         save() {
             if (this.isEditMode) {
                 this.currentMode = MODES.VIEW_MODE;
-                this.$emit('save-item', this.currentItem);
+                this.$emit("save-item", this.currentItem);
             }
         }
     },
@@ -786,8 +802,8 @@ var GOFormWithEditvue_type_style_index_0_lang_css_ = __webpack_require__("ZId5")
 
 var GOFormWithEdit_component = normalizeComponent(
   containers_GOFormWithEditvue_type_script_lang_js_,
-  GOFormWithEditvue_type_template_id_c887dcec_render,
-  GOFormWithEditvue_type_template_id_c887dcec_staticRenderFns,
+  GOFormWithEditvue_type_template_id_50658163_render,
+  GOFormWithEditvue_type_template_id_50658163_staticRenderFns,
   false,
   null,
   null,

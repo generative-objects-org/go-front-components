@@ -1,19 +1,30 @@
 <template>
     <v-form>
-        <slot name="default" :item="currentItem" :viewMode="isViewMode" v-if="currentItem">
+        <slot
+            name="default"
+            :item="currentItem"
+            :viewMode="isViewMode"
+            v-if="currentItem && !isLoading"
+        >
             <!-- Default slot where form content will be injected -->
         </slot>
-         <div v-if="!currentItem && noDataTextComp">
-            {{ noDataTextComp }}
+        <div v-if="!currentItem && noDataTextComp && !isLoading">{{ noDataTextComp }}</div>
+        <div v-if="isLoading" class="d-flex">
+            <v-progress-circular :size="50" color="primary" indeterminate></v-progress-circular>
         </div>
-        <slot name="form-actions" :actions="defaultActions" :viewMode="isViewMode"> 
+        <slot
+            name="form-actions"
+            :actions="defaultActions"
+            :viewMode="isViewMode"
+            v-if="!isLoading"
+        >
             <!-- Slot where form actions will be injected  -->
         </slot>
     </v-form>
 </template>
 
 <script>
-import { FormComponentMixin } from 'go-front-libs';
+import { FormComponentMixin } from "go-front-libs";
 
 let MODES = FormComponentMixin.MODES;
 let FORM_ACTIONS = FormComponentMixin.FORM_ACTIONS;
@@ -22,8 +33,10 @@ export default {
     props: {
         initialMode: String,
         currentItem: Object,
-        noDataText: String
+        noDataText: String,
+        loading: Boolean
     },
+
     data() {
         return {
             currentMode: MODES.VIEW_MODE,
@@ -52,8 +65,11 @@ export default {
         isEditMode() {
             return this.currentMode === MODES.EDIT_MODE;
         },
+        isLoading() {
+            return this.loading !== undefined ? this.loading : false;
+        },
         noDataTextComp() {
-            return this.noDataText ? this.noDataText : '';
+            return this.noDataText ? this.noDataText : "";
         }
     },
 
@@ -62,30 +78,30 @@ export default {
         cancelEdit() {
             if (this.isEditMode) {
                 this.currentMode = MODES.VIEW_MODE;
-                this.$emit('cancel-edit', this.currentItem);
+                this.$emit("cancel-edit", this.currentItem);
             }
         },
         createNew() {
             if (this.isViewMode) {
                 this.currentMode = MODES.EDIT_MODE;
-                this.$emit('create-item');
+                this.$emit("create-item");
             }
         },
         delete() {
             if (this.isViewMode) {
-                this.$emit('delete-item', this.currentItem);
+                this.$emit("delete-item", this.currentItem);
             }
         },
         enterEdit() {
             if (this.isViewMode) {
                 this.currentMode = MODES.EDIT_MODE;
-                this.$emit('enter-edit', this.currentItem);
+                this.$emit("enter-edit", this.currentItem);
             }
         },
         save() {
             if (this.isEditMode) {
                 this.currentMode = MODES.VIEW_MODE;
-                this.$emit('save-item', this.currentItem);
+                this.$emit("save-item", this.currentItem);
             }
         }
     },
