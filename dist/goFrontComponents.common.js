@@ -1334,14 +1334,15 @@ function install() {
 // CONCATENATED MODULE: ./src/index.js
 
 
+
 function src_install() {
     install();
 }
 
 /* harmony default export */ var src = ({
-    install: src_install
+    install: src_install,
+    visibilityMixin: visible_prop_mixin
 });
-
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 
 
