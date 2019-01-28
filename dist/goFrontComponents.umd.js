@@ -1348,14 +1348,13 @@ function src_install() {
     install();
 }
 
-/* harmony default export */ var src = ({
-    install: src_install,
-    visibilityMixin: visible_prop_mixin
-});
+const VisibilityMixin = visible_prop_mixin;
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "install", function() { return src_install; });
+/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "VisibilityMixin", function() { return VisibilityMixin; });
 
 
-/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (src);
+/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (/* Cannot get final name for export "default" in "./src/index.js" (known exports: install VisibilityMixin, known reexports: ) */ undefined);
 
 
 

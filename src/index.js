@@ -3,11 +3,8 @@ import {
 } from './go-default';
 import VisiblePropMixin from "@/mixins/visible-prop-mixin";
 
-function install() {
+export function install() {
     installGODefault();
 }
 
-export default {
-    install: install,
-    visibilityMixin: VisiblePropMixin
-};
+export const VisibilityMixin = VisiblePropMixin;
