@@ -4,7 +4,7 @@
             <v-text-field :label="label" :value="value" disabled></v-text-field>
         </div>
         <div v-if="editMode">
-            <v-text-field :label="label" :value="value" v-on:input="onInput"></v-text-field>
+            <v-text-field :label="label" :value="value" v-on:input="onInput" :disabled="isDisabled"></v-text-field>
         </div>
     </div>
 </template>

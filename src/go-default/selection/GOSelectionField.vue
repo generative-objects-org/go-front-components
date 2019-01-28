@@ -10,6 +10,7 @@
                 :label="label"
                 @change="onChange"
                 :loading="loading"
+                :disabled="isDisabled"
             ></v-select>
         </div>
     </div>
@@ -17,8 +18,10 @@
 
 <script>
 import VisiblePropMixin from "@/mixins/visible-prop-mixin"; // exposes isVisible computed
+import DisabledPropMixin from "@/mixins/disabled-prop-mixin"; // exposes isDisabled computed
+
 export default {
-    mixins: [VisiblePropMixin],
+    mixins: [VisiblePropMixin, DisabledPropMixin],
     props: {
         value: [Number, String],
         viewMode: Boolean,

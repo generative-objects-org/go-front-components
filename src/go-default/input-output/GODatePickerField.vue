@@ -22,6 +22,7 @@
                     prepend-icon="event"
                     @blur="onTextFieldBlur"
                     @input="onTextFieldChange"
+                    :disabled="isDisabled"
                 ></v-text-field>
                 <v-date-picker
                     @input="onDateInput"
@@ -41,9 +42,10 @@ import {
     getDateFromSlashedDate
 } from "../../utils/dateConverters.js";
 import VisiblePropMixin from "@/mixins/visible-prop-mixin"; // exposes isVisible computed
+import DisabledPropMixin from "@/mixins/disabled-prop-mixin"; // exposes isDisabled computed
 
 export default {
-    mixins: [VisiblePropMixin],
+    mixins: [VisiblePropMixin, DisabledPropMixin],
     props: {
         value: Date,
         viewMode: Boolean,

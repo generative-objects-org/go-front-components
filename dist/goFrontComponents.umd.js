@@ -287,13 +287,28 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var GOBreadCrumb = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/actions/GOButton.vue?vue&type=template&id=68097be7&
-var GOButtonvue_type_template_id_68097be7_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('v-btn',{attrs:{"disabled":_vm.isDisabled,"loading":_vm.isLoading,"ripple":""},on:{"click":_vm.clickMethod}},[_vm._v(_vm._s(_vm.label))]):_vm._e()}
-var GOButtonvue_type_template_id_68097be7_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/actions/GOButton.vue?vue&type=template&id=3d699e28&
+var GOButtonvue_type_template_id_3d699e28_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('v-btn',{attrs:{"disabled":_vm.isDisabled,"loading":_vm.isLoading,"ripple":""},on:{"click":_vm.clickMethod}},[_vm._v(_vm._s(_vm.label))]):_vm._e()}
+var GOButtonvue_type_template_id_3d699e28_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/go-default/actions/GOButton.vue?vue&type=template&id=68097be7&
+// CONCATENATED MODULE: ./src/go-default/actions/GOButton.vue?vue&type=template&id=3d699e28&
 
+// CONCATENATED MODULE: ./src/mixins/disabled-prop-mixin.js
+/* harmony default export */ var disabled_prop_mixin = ({
+    props: {
+        disabled: {
+            type: Boolean,
+            default: undefined
+        }
+    },
+
+    computed: {
+        isDisabled() {
+            return this.disabled !== undefined ? this.disabled : false;
+        }
+    }
+});
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/actions/GOButton.vue?vue&type=script&lang=js&
 //
 //
@@ -307,19 +322,17 @@ var GOButtonvue_type_template_id_68097be7_staticRenderFns = []
 //
 
  // exposes isVisible computed
+ // exposes isDisabled computed
+
 /* harmony default export */ var GOButtonvue_type_script_lang_js_ = ({
-    mixins: [visible_prop_mixin],
+    mixins: [visible_prop_mixin, disabled_prop_mixin],
     props: {
-        disabled: Boolean,
         click: Function,
         label: String,
         loading: Boolean
     },
 
     computed: {
-        isDisabled() {
-            return this.disabled !== undefined ? this.disabled : false;
-        },
         isLoading() {
             return this.loading !== undefined ? this.loading : false;
         },
@@ -345,8 +358,8 @@ var GOButtonvue_type_style_index_0_lang_css_ = __webpack_require__("YwxI");
 
 var GOButton_component = normalizeComponent(
   actions_GOButtonvue_type_script_lang_js_,
-  GOButtonvue_type_template_id_68097be7_render,
-  GOButtonvue_type_template_id_68097be7_staticRenderFns,
+  GOButtonvue_type_template_id_3d699e28_render,
+  GOButtonvue_type_template_id_3d699e28_staticRenderFns,
   false,
   null,
   null,
@@ -355,12 +368,12 @@ var GOButton_component = normalizeComponent(
 )
 
 /* harmony default export */ var GOButton = (GOButton_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/input-output/GOCheckboxField.vue?vue&type=template&id=810163ee&
-var GOCheckboxFieldvue_type_template_id_810163ee_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('div',[(_vm.viewMode)?_c('div',{staticClass:"go-text-view"},[_c('v-checkbox',{attrs:{"label":_vm.label,"input-value":_vm.value,"disabled":""}})],1):_vm._e(),(_vm.editMode)?_c('div',[_c('v-checkbox',{attrs:{"label":_vm.label,"input-value":_vm.value},on:{"change":_vm.onChange}})],1):_vm._e()]):_vm._e()}
-var GOCheckboxFieldvue_type_template_id_810163ee_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/input-output/GOCheckboxField.vue?vue&type=template&id=2ef3d9e3&
+var GOCheckboxFieldvue_type_template_id_2ef3d9e3_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('div',[(_vm.viewMode)?_c('div',{staticClass:"go-text-view"},[_c('v-checkbox',{attrs:{"label":_vm.label,"input-value":_vm.value,"disabled":""}})],1):_vm._e(),(_vm.editMode)?_c('div',[_c('v-checkbox',{attrs:{"label":_vm.label,"input-value":_vm.value,"disabled":_vm.isDisabled},on:{"change":_vm.onChange}})],1):_vm._e()]):_vm._e()}
+var GOCheckboxFieldvue_type_template_id_2ef3d9e3_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/go-default/input-output/GOCheckboxField.vue?vue&type=template&id=810163ee&
+// CONCATENATED MODULE: ./src/go-default/input-output/GOCheckboxField.vue?vue&type=template&id=2ef3d9e3&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/input-output/GOCheckboxField.vue?vue&type=script&lang=js&
 //
@@ -374,10 +387,17 @@ var GOCheckboxFieldvue_type_template_id_810163ee_staticRenderFns = []
 //
 //
 //
+//
+//
+//
+//
+//
 
  // exposes isVisible computed
+ // exposes isDisabled computed
+
 /* harmony default export */ var GOCheckboxFieldvue_type_script_lang_js_ = ({
-    mixins: [visible_prop_mixin],
+    mixins: [visible_prop_mixin, disabled_prop_mixin],
     model: {
         prop: "value",
         event: "change"
@@ -420,8 +440,8 @@ var GOCheckboxFieldvue_type_style_index_0_lang_css_ = __webpack_require__("rxKg"
 
 var GOCheckboxField_component = normalizeComponent(
   input_output_GOCheckboxFieldvue_type_script_lang_js_,
-  GOCheckboxFieldvue_type_template_id_810163ee_render,
-  GOCheckboxFieldvue_type_template_id_810163ee_staticRenderFns,
+  GOCheckboxFieldvue_type_template_id_2ef3d9e3_render,
+  GOCheckboxFieldvue_type_template_id_2ef3d9e3_staticRenderFns,
   false,
   null,
   null,
@@ -506,12 +526,12 @@ var GOColumnLayout_component = normalizeComponent(
 )
 
 /* harmony default export */ var GOColumnLayout = (GOColumnLayout_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/input-output/GODatePickerField.vue?vue&type=template&id=5ef321fb&
-var GODatePickerFieldvue_type_template_id_5ef321fb_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('div',[(_vm.viewMode)?_c('div',{staticClass:"go-text-view"},[_c('v-text-field',{attrs:{"label":_vm.label,"value":_vm.displayedValue,"disabled":"","prepend-icon":"event"}})],1):_vm._e(),(_vm.editMode)?_c('div',[_c('v-menu',{ref:"menu",attrs:{"close-on-content-click":false,"nudge-right":40,"lazy":"","transition":"scale-transition","offset-y":"","full-width":"","min-width":"290px"},model:{value:(_vm.menu),callback:function ($$v) {_vm.menu=$$v},expression:"menu"}},[_c('v-text-field',{attrs:{"slot":"activator","value":_vm.displayedValue,"label":_vm.label,"prepend-icon":"event"},on:{"blur":_vm.onTextFieldBlur,"input":_vm.onTextFieldChange},slot:"activator"}),_c('v-date-picker',{attrs:{"no-title":"","scrollable":"","first-day-of-week":"1","value":_vm.dashedDate},on:{"input":_vm.onDateInput}})],1)],1):_vm._e()]):_vm._e()}
-var GODatePickerFieldvue_type_template_id_5ef321fb_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/input-output/GODatePickerField.vue?vue&type=template&id=2313a0da&
+var GODatePickerFieldvue_type_template_id_2313a0da_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('div',[(_vm.viewMode)?_c('div',{staticClass:"go-text-view"},[_c('v-text-field',{attrs:{"label":_vm.label,"value":_vm.displayedValue,"disabled":"","prepend-icon":"event"}})],1):_vm._e(),(_vm.editMode)?_c('div',[_c('v-menu',{ref:"menu",attrs:{"close-on-content-click":false,"nudge-right":40,"lazy":"","transition":"scale-transition","offset-y":"","full-width":"","min-width":"290px"},model:{value:(_vm.menu),callback:function ($$v) {_vm.menu=$$v},expression:"menu"}},[_c('v-text-field',{attrs:{"slot":"activator","value":_vm.displayedValue,"label":_vm.label,"prepend-icon":"event","disabled":_vm.isDisabled},on:{"blur":_vm.onTextFieldBlur,"input":_vm.onTextFieldChange},slot:"activator"}),_c('v-date-picker',{attrs:{"no-title":"","scrollable":"","first-day-of-week":"1","value":_vm.dashedDate},on:{"input":_vm.onDateInput}})],1)],1):_vm._e()]):_vm._e()}
+var GODatePickerFieldvue_type_template_id_2313a0da_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/go-default/input-output/GODatePickerField.vue?vue&type=template&id=5ef321fb&
+// CONCATENATED MODULE: ./src/go-default/input-output/GODatePickerField.vue?vue&type=template&id=2313a0da&
 
 // CONCATENATED MODULE: ./src/utils/dateConverters.js
 function getDateFromSlashedDate(slashedDate) {
@@ -586,12 +606,14 @@ function getDashedDate(dateObject) {
 //
 //
 //
+//
 
 
  // exposes isVisible computed
+ // exposes isDisabled computed
 
 /* harmony default export */ var GODatePickerFieldvue_type_script_lang_js_ = ({
-    mixins: [visible_prop_mixin],
+    mixins: [visible_prop_mixin, disabled_prop_mixin],
     props: {
         value: Date,
         viewMode: Boolean,
@@ -666,8 +688,8 @@ var GODatePickerFieldvue_type_style_index_0_lang_css_ = __webpack_require__("/DQ
 
 var GODatePickerField_component = normalizeComponent(
   input_output_GODatePickerFieldvue_type_script_lang_js_,
-  GODatePickerFieldvue_type_template_id_5ef321fb_render,
-  GODatePickerFieldvue_type_template_id_5ef321fb_staticRenderFns,
+  GODatePickerFieldvue_type_template_id_2313a0da_render,
+  GODatePickerFieldvue_type_template_id_2313a0da_staticRenderFns,
   false,
   null,
   null,
@@ -945,12 +967,12 @@ var GOGridColumn_component = normalizeComponent(
 )
 
 /* harmony default export */ var GOGridColumn = (GOGridColumn_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/actions/GOIcon.vue?vue&type=template&id=37f50970&
-var GOIconvue_type_template_id_37f50970_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('v-btn',{staticClass:"mx-0",attrs:{"icon":"","disabled":_vm.isDisabled},on:{"click":_vm.clickMethod}},[_c('v-icon',[_vm._v(_vm._s(_vm.iconName))])],1):_vm._e()}
-var GOIconvue_type_template_id_37f50970_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/actions/GOIcon.vue?vue&type=template&id=7829231a&
+var GOIconvue_type_template_id_7829231a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('v-btn',{staticClass:"mx-0",attrs:{"icon":"","disabled":_vm.isDisabled,"loading":_vm.isLoading},on:{"click":_vm.clickMethod}},[_c('v-icon',[_vm._v(_vm._s(_vm.iconName))])],1):_vm._e()}
+var GOIconvue_type_template_id_7829231a_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/go-default/actions/GOIcon.vue?vue&type=template&id=37f50970&
+// CONCATENATED MODULE: ./src/go-default/actions/GOIcon.vue?vue&type=template&id=7829231a&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/actions/GOIcon.vue?vue&type=script&lang=js&
 //
@@ -959,20 +981,28 @@ var GOIconvue_type_template_id_37f50970_staticRenderFns = []
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
  // exposes isVisible computed
+ // exposes isDisabled computed
+
 /* harmony default export */ var GOIconvue_type_script_lang_js_ = ({
     mixins: [visible_prop_mixin],
     props: {
-        disabled: Boolean,
         click: Function,
         iconName: String,
         loading: Boolean
     },
 
     computed: {
-        isDisabled() {
-            return this.disabled !== undefined ? this.disabled : false;
+        isLoading() {
+            return this.loading !== undefined ? this.loading : false;
         },
         clickMethod() {
             return this.click !== undefined ? this.click : () => {};
@@ -996,8 +1026,8 @@ var GOIconvue_type_style_index_0_lang_css_ = __webpack_require__("tLcC");
 
 var GOIcon_component = normalizeComponent(
   actions_GOIconvue_type_script_lang_js_,
-  GOIconvue_type_template_id_37f50970_render,
-  GOIconvue_type_template_id_37f50970_staticRenderFns,
+  GOIconvue_type_template_id_7829231a_render,
+  GOIconvue_type_template_id_7829231a_staticRenderFns,
   false,
   null,
   null,
@@ -1006,12 +1036,12 @@ var GOIcon_component = normalizeComponent(
 )
 
 /* harmony default export */ var GOIcon = (GOIcon_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/selection/GOSelectionField.vue?vue&type=template&id=7a004f2c&
-var GOSelectionFieldvue_type_template_id_7a004f2c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('div',[(_vm.viewMode)?_c('div',{staticClass:"go-text-view"},[_c('v-select',{attrs:{"items":_vm.dataCollection,"value":_vm.value,"label":_vm.label,"disabled":""}})],1):_vm._e(),(_vm.editMode)?_c('div',[_c('v-select',{attrs:{"items":_vm.dataCollection,"value":_vm.value,"label":_vm.label,"loading":_vm.loading},on:{"change":_vm.onChange}})],1):_vm._e()]):_vm._e()}
-var GOSelectionFieldvue_type_template_id_7a004f2c_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/selection/GOSelectionField.vue?vue&type=template&id=77520120&
+var GOSelectionFieldvue_type_template_id_77520120_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('div',[(_vm.viewMode)?_c('div',{staticClass:"go-text-view"},[_c('v-select',{attrs:{"items":_vm.dataCollection,"value":_vm.value,"label":_vm.label,"disabled":""}})],1):_vm._e(),(_vm.editMode)?_c('div',[_c('v-select',{attrs:{"items":_vm.dataCollection,"value":_vm.value,"label":_vm.label,"loading":_vm.loading,"disabled":_vm.isDisabled},on:{"change":_vm.onChange}})],1):_vm._e()]):_vm._e()}
+var GOSelectionFieldvue_type_template_id_77520120_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/go-default/selection/GOSelectionField.vue?vue&type=template&id=7a004f2c&
+// CONCATENATED MODULE: ./src/go-default/selection/GOSelectionField.vue?vue&type=template&id=77520120&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/selection/GOSelectionField.vue?vue&type=script&lang=js&
 //
@@ -1031,10 +1061,13 @@ var GOSelectionFieldvue_type_template_id_7a004f2c_staticRenderFns = []
 //
 //
 //
+//
 
  // exposes isVisible computed
+ // exposes isDisabled computed
+
 /* harmony default export */ var GOSelectionFieldvue_type_script_lang_js_ = ({
-    mixins: [visible_prop_mixin],
+    mixins: [visible_prop_mixin, disabled_prop_mixin],
     props: {
         value: [Number, String],
         viewMode: Boolean,
@@ -1074,8 +1107,8 @@ var GOSelectionFieldvue_type_style_index_0_lang_css_ = __webpack_require__("9L8D
 
 var GOSelectionField_component = normalizeComponent(
   selection_GOSelectionFieldvue_type_script_lang_js_,
-  GOSelectionFieldvue_type_template_id_7a004f2c_render,
-  GOSelectionFieldvue_type_template_id_7a004f2c_staticRenderFns,
+  GOSelectionFieldvue_type_template_id_77520120_render,
+  GOSelectionFieldvue_type_template_id_77520120_staticRenderFns,
   false,
   null,
   null,
@@ -1228,12 +1261,12 @@ var GOText_component = normalizeComponent(
 )
 
 /* harmony default export */ var GOText = (GOText_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/input-output/GOTextField.vue?vue&type=template&id=5bc6db36&
-var GOTextFieldvue_type_template_id_5bc6db36_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('div',[(_vm.viewMode)?_c('div',{staticClass:"go-text-view"},[_c('v-text-field',{attrs:{"label":_vm.label,"value":_vm.value,"disabled":""}})],1):_vm._e(),(_vm.editMode)?_c('div',[_c('v-text-field',{attrs:{"label":_vm.label,"value":_vm.value},on:{"input":_vm.onInput}})],1):_vm._e()]):_vm._e()}
-var GOTextFieldvue_type_template_id_5bc6db36_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/input-output/GOTextField.vue?vue&type=template&id=4bfec701&
+var GOTextFieldvue_type_template_id_4bfec701_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('div',[(_vm.viewMode)?_c('div',{staticClass:"go-text-view"},[_c('v-text-field',{attrs:{"label":_vm.label,"value":_vm.value,"disabled":""}})],1):_vm._e(),(_vm.editMode)?_c('div',[_c('v-text-field',{attrs:{"label":_vm.label,"value":_vm.value,"disabled":_vm.isDisabled},on:{"input":_vm.onInput}})],1):_vm._e()]):_vm._e()}
+var GOTextFieldvue_type_template_id_4bfec701_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/go-default/input-output/GOTextField.vue?vue&type=template&id=5bc6db36&
+// CONCATENATED MODULE: ./src/go-default/input-output/GOTextField.vue?vue&type=template&id=4bfec701&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/input-output/GOTextField.vue?vue&type=script&lang=js&
 //
@@ -1288,8 +1321,8 @@ var GOTextFieldvue_type_style_index_0_lang_css_ = __webpack_require__("8mn8");
 
 var GOTextField_component = normalizeComponent(
   input_output_GOTextFieldvue_type_script_lang_js_,
-  GOTextFieldvue_type_template_id_5bc6db36_render,
-  GOTextFieldvue_type_template_id_5bc6db36_staticRenderFns,
+  GOTextFieldvue_type_template_id_4bfec701_render,
+  GOTextFieldvue_type_template_id_4bfec701_staticRenderFns,
   false,
   null,
   null,
@@ -1343,18 +1376,14 @@ function install() {
 // CONCATENATED MODULE: ./src/index.js
 
 
-
 function src_install() {
     install();
 }
-
-const VisibilityMixin = visible_prop_mixin;
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "install", function() { return src_install; });
-/* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "VisibilityMixin", function() { return VisibilityMixin; });
 
 
-/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (/* Cannot get final name for export "default" in "./src/index.js" (known exports: install VisibilityMixin, known reexports: ) */ undefined);
+/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (/* Cannot get final name for export "default" in "./src/index.js" (known exports: install, known reexports: ) */ undefined);
 
 
 

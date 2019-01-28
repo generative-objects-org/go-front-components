@@ -4,15 +4,22 @@
             <v-checkbox :label="label" :input-value="value" disabled></v-checkbox>
         </div>
         <div v-if="editMode">
-            <v-checkbox :label="label" :input-value="value" v-on:change="onChange"></v-checkbox>
+            <v-checkbox
+                :label="label"
+                :input-value="value"
+                v-on:change="onChange"
+                :disabled="isDisabled"
+            ></v-checkbox>
         </div>
     </div>
 </template>
 
 <script>
 import VisiblePropMixin from "@/mixins/visible-prop-mixin"; // exposes isVisible computed
+import DisabledPropMixin from "@/mixins/disabled-prop-mixin"; // exposes isDisabled computed
+
 export default {
-    mixins: [VisiblePropMixin],
+    mixins: [VisiblePropMixin, DisabledPropMixin],
     model: {
         prop: "value",
         event: "change"

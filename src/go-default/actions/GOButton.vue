@@ -10,19 +10,17 @@
 
 <script>
 import VisiblePropMixin from "@/mixins/visible-prop-mixin"; // exposes isVisible computed
+import DisabledPropMixin from "@/mixins/disabled-prop-mixin"; // exposes isDisabled computed
+
 export default {
-    mixins: [VisiblePropMixin],
+    mixins: [VisiblePropMixin, DisabledPropMixin],
     props: {
-        disabled: Boolean,
         click: Function,
         label: String,
         loading: Boolean
     },
 
     computed: {
-        isDisabled() {
-            return this.disabled !== undefined ? this.disabled : false;
-        },
         isLoading() {
             return this.loading !== undefined ? this.loading : false;
         },
