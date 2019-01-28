@@ -1,5 +1,5 @@
 <template>
-    <v-form>
+    <v-form v-if="isVisible">
         <slot
             name="default"
             :item="currentItem"
@@ -24,12 +24,14 @@
 </template>
 
 <script>
+import VisiblePropMixin from "@/mixins/visible-prop-mixin"; // exposes isVisible computed
 import { FormComponentMixin } from "go-front-libs";
 
 let MODES = FormComponentMixin.MODES;
 let FORM_ACTIONS = FormComponentMixin.FORM_ACTIONS;
 
 export default {
+    mixins: [VisiblePropMixin],
     props: {
         initialMode: String,
         currentItem: Object,

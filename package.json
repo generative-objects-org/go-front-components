@@ -2,7 +2,7 @@
     "name": "go-front-components",
     "description": "VueJS components used in GO generated apps",
     "authors": "GenerativeObjects",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "private": true,
     "main": "dist/goFrontComponents.umd.min.js",
     "devDependencies": {

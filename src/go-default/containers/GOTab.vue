@@ -5,7 +5,10 @@
 </template>
 
 <script>
-export default {};
+import VisiblePropMixin from "@/mixins/visible-prop-mixin"; // exposes isVisible computed
+export default {
+    mixins: [VisiblePropMixin]
+};
 </script>
 
 <style>

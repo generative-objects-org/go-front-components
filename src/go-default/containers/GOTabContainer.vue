@@ -1,5 +1,5 @@
 <template>
-    <v-tabs>
+    <v-tabs v-if="isVisible">
         <v-tab v-for="tab in this.tabItems" :key="tab.name">{{tab.title}}</v-tab>
         <v-tabs-items>
             <slot name="default"></slot>
@@ -8,7 +8,9 @@
 </template>
 
 <script>
+import VisiblePropMixin from "@/mixins/visible-prop-mixin"; // exposes isVisible computed
 export default {
+    mixins: [VisiblePropMixin],
     props: { tabItems: Array }
 };
 </script>

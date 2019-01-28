@@ -1,11 +1,12 @@
 <template>
-    <v-flex>
+    <v-flex v-if="isVisible">
         <v-data-table
-        :items="dataToDisplay"
-        :headers="headers"
-        :loading="loading"
-        hide-actions
-        class="elevation-1">
+            :items="dataToDisplay"
+            :headers="headers"
+            :loading="loading"
+            hide-actions
+            class="elevation-1"
+        >
             <template slot="items" slot-scope="props">
                 <tr>
                     <slot name="default" :item="props.item"></slot>
@@ -19,7 +20,9 @@
 </template>
 
 <script>
+import VisiblePropMixin from "@/mixins/visible-prop-mixin"; // exposes isVisible computed
 export default {
+    mixins: [VisiblePropMixin],
     props: {
         dataCollection: Array,
         headers: Array,

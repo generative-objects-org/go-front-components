@@ -1,12 +1,7 @@
 <template>
-    <div>
+    <div v-if="isVisible">
         <div v-if="viewMode" class="go-text-view">
-            <v-text-field 
-                :label="label"
-                :value="displayedValue"
-                disabled
-                prepend-icon="event"
-            ></v-text-field>
+            <v-text-field :label="label" :value="displayedValue" disabled prepend-icon="event"></v-text-field>
         </div>
         <div v-if="editMode">
             <v-menu
@@ -28,11 +23,11 @@
                     @blur="onTextFieldBlur"
                     @input="onTextFieldChange"
                 ></v-text-field>
-                <v-date-picker 
-                    @input="onDateInput" 
-                    no-title 
-                    scrollable 
-                    first-day-of-week="1" 
+                <v-date-picker
+                    @input="onDateInput"
+                    no-title
+                    scrollable
+                    first-day-of-week="1"
                     :value="dashedDate"
                 ></v-date-picker>
             </v-menu>
@@ -44,9 +39,11 @@
 import {
     getDashedDate,
     getDateFromSlashedDate
-} from '../../utils/dateConverters.js';
+} from "../../utils/dateConverters.js";
+import VisiblePropMixin from "@/mixins/visible-prop-mixin"; // exposes isVisible computed
 
 export default {
+    mixins: [VisiblePropMixin],
     props: {
         value: Date,
         viewMode: Boolean,
@@ -65,7 +62,7 @@ export default {
         displayedValue() {
             if (!this.value) return null;
 
-            const [year, month, day] = getDashedDate(this.value).split('-');
+            const [year, month, day] = getDashedDate(this.value).split("-");
             return `${day}/${month}/${year}`;
         },
         // We use the dashed version of the provided Date object (this.value)
@@ -77,7 +74,7 @@ export default {
     methods: {
         onDateInput(val) {
             // When emitting the Date object, we make sure it is set to the Greenwhich TZ
-            this.$emit('input', new Date(val + 'T00:00:00Z'));
+            this.$emit("input", new Date(val + "T00:00:00Z"));
             this.menu = false;
         },
         onTextFieldChange(val) {
@@ -89,7 +86,7 @@ export default {
         onTextFieldBlur(evt) {
             let inputDate = getDateFromSlashedDate(evt.target.value);
             if (inputDate != null) {
-                this.$emit('input', inputDate);
+                this.$emit("input", inputDate);
             }
             this.tempDashedDate = null;
         }
