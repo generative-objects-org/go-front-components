@@ -27,7 +27,7 @@
         "vuetify": "^1.1.5"
     },
     "peerDependencies": {
-        "go-front-libs": "git+ssh://git@git.generativeobjects.com:go-core/go-front-libs.git",
+        "go-front-libs": "git+https://git.generativeobjects.com/go-source/go-front-libs.git",
         "vue": "^2.4.4",
         "vuetify": "^1.1.5"
     },
