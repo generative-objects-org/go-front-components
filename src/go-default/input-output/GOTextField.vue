@@ -11,9 +11,10 @@
 
 <script>
 import VisiblePropMixin from "@/mixins/visible-prop-mixin"; // exposes isVisible computed
+import DisabledPropMixin from "@/mixins/disabled-prop-mixin"; // exposes isDisabled computed
 
 export default {
-    mixins: [VisiblePropMixin],
+    mixins: [VisiblePropMixin, DisabledPropMixin],
     props: {
         value: [String, Number],
         viewMode: Boolean,

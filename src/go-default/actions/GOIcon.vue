@@ -16,7 +16,7 @@ import VisiblePropMixin from "@/mixins/visible-prop-mixin"; // exposes isVisible
 import DisabledPropMixin from "@/mixins/disabled-prop-mixin"; // exposes isDisabled computed
 
 export default {
-    mixins: [VisiblePropMixin],
+    mixins: [VisiblePropMixin, DisabledPropMixin],
     props: {
         click: Function,
         iconName: String,
