@@ -849,14 +849,29 @@ var GOFormWithEdit_component = normalizeComponent(
 )
 
 /* harmony default export */ var GOFormWithEdit = (GOFormWithEdit_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOGrid.vue?vue&type=template&id=b7b8e426&
-var GOGridvue_type_template_id_b7b8e426_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('v-flex',[_c('v-data-table',{staticClass:"elevation-1",attrs:{"items":_vm.dataToDisplay,"headers":_vm.headers,"loading":_vm.loading,"hide-actions":""},scopedSlots:_vm._u([{key:"items",fn:function(props){return [_c('tr',[_vm._t("default",null,{item:props.item})],2)]}}])}),_vm._t("grid-actions")],2):_vm._e()}
-var GOGridvue_type_template_id_b7b8e426_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOGrid.vue?vue&type=template&id=72dc6a71&
+var GOGridvue_type_template_id_72dc6a71_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('v-flex',[_c('v-data-table',{staticClass:"elevation-1",attrs:{"items":_vm.dataToDisplay,"headers":_vm.headers,"loading":_vm.loading,"total-items":_vm.totalItems,"pagination":_vm.localPaginationObject,"hide-actions":"","disable-initial-sort":""},on:{"update:pagination":[function($event){_vm.localPaginationObject=$event},_vm.onPaginationUpdated]},scopedSlots:_vm._u([{key:"items",fn:function(props){return [_c('tr',[_vm._t("default",null,{item:props.item})],2)]}}])},[(_vm.pagination && _vm.pagination.isPaginationEnabled)?_c('template',{slot:"footer"},[_c('td',{staticClass:"text-xs-center",attrs:{"colspan":_vm.headers.length}},[(_vm.pagination.totalPage > 1 && _vm.pagination.currentTotal > 0)?_c('v-pagination',{attrs:{"length":_vm.pagination.totalPage,"total-visible":"6"},on:{"input":_vm.onCurrentPageNumberChanged},model:{value:(_vm.localPaginationObject.page),callback:function ($$v) {_vm.$set(_vm.localPaginationObject, "page", $$v)},expression:"localPaginationObject.page"}}):_vm._e()],1)]):_vm._e()],2),_vm._t("grid-actions")],2):_vm._e()}
+var GOGridvue_type_template_id_72dc6a71_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/go-default/containers/GOGrid.vue?vue&type=template&id=b7b8e426&
+// CONCATENATED MODULE: ./src/go-default/containers/GOGrid.vue?vue&type=template&id=72dc6a71&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOGrid.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -885,14 +900,59 @@ var GOGridvue_type_template_id_b7b8e426_staticRenderFns = []
     props: {
         dataCollection: Array,
         headers: Array,
-        loading: Boolean
+        loading: Boolean,
+        pagination: Object,
+        sort: Object
+    },
+    data() {
+        return {
+            localPaginationObject: {
+                sortBy:
+                    this.sort && this.sort.sortColumn
+                        ? this.sort.sortColumn
+                        : null,
+                descending: this.sort && this.sort.isDescendings
+            }
+        };
     },
     computed: {
         dataToDisplay() {
             return this.dataCollection;
+        },
+        totalItems() {
+            if (this.pagination && this.pagination.isPaginationEnabled) {
+                return this.pagination.currentTotal;
+            }
+            // Returning -1 to tell v-data-table that we handle pagination externally
+            // even when disabled (to capture sort)
+            return -1;
         }
     },
-    components: {}
+    methods: {
+        onCurrentPageNumberChanged(value) {
+            this.$emit("pageChanged", value);
+            this.localPaginationObject.page = value;
+        },
+        onPaginationUpdated(pagination) {
+            console.log(pagination);
+            if (
+                this.pagination &&
+                pagination.page !== this.pagination.currentPageNumber
+            ) {
+                this.$emit("pageChanged", pagination.page);
+            }
+            if (
+                this.sort &&
+                (pagination.sortBy !== this.sort.sortColumn ||
+                    pagination.descending != this.sort.isDescending)
+            ) {
+                this.$emit("sortUpdated", {
+                    sortColumn: pagination.sortBy,
+                    isDescending: pagination.descending
+                });
+            }
+        }
+    }
 });
 
 // CONCATENATED MODULE: ./src/go-default/containers/GOGrid.vue?vue&type=script&lang=js&
@@ -911,8 +971,8 @@ var GOGridvue_type_style_index_0_lang_css_ = __webpack_require__("+aye");
 
 var GOGrid_component = normalizeComponent(
   containers_GOGridvue_type_script_lang_js_,
-  GOGridvue_type_template_id_b7b8e426_render,
-  GOGridvue_type_template_id_b7b8e426_staticRenderFns,
+  GOGridvue_type_template_id_72dc6a71_render,
+  GOGridvue_type_template_id_72dc6a71_staticRenderFns,
   false,
   null,
   null,
@@ -967,12 +1027,12 @@ var GOGridColumn_component = normalizeComponent(
 )
 
 /* harmony default export */ var GOGridColumn = (GOGridColumn_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/actions/GOIcon.vue?vue&type=template&id=7829231a&
-var GOIconvue_type_template_id_7829231a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('v-btn',{staticClass:"mx-0",attrs:{"icon":"","disabled":_vm.isDisabled,"loading":_vm.isLoading},on:{"click":_vm.clickMethod}},[_c('v-icon',[_vm._v(_vm._s(_vm.iconName))])],1):_vm._e()}
-var GOIconvue_type_template_id_7829231a_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/actions/GOIcon.vue?vue&type=template&id=107ffafb&
+var GOIconvue_type_template_id_107ffafb_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('v-btn',{staticClass:"mx-0",attrs:{"icon":"","disabled":_vm.isDisabled,"loading":_vm.isLoading},on:{"click":_vm.clickMethod}},[_c('v-icon',[_vm._v(_vm._s(_vm.iconName))])],1):_vm._e()}
+var GOIconvue_type_template_id_107ffafb_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/go-default/actions/GOIcon.vue?vue&type=template&id=7829231a&
+// CONCATENATED MODULE: ./src/go-default/actions/GOIcon.vue?vue&type=template&id=107ffafb&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/actions/GOIcon.vue?vue&type=script&lang=js&
 //
@@ -993,7 +1053,7 @@ var GOIconvue_type_template_id_7829231a_staticRenderFns = []
  // exposes isDisabled computed
 
 /* harmony default export */ var GOIconvue_type_script_lang_js_ = ({
-    mixins: [visible_prop_mixin],
+    mixins: [visible_prop_mixin, disabled_prop_mixin],
     props: {
         click: Function,
         iconName: String,
@@ -1026,8 +1086,8 @@ var GOIconvue_type_style_index_0_lang_css_ = __webpack_require__("tLcC");
 
 var GOIcon_component = normalizeComponent(
   actions_GOIconvue_type_script_lang_js_,
-  GOIconvue_type_template_id_7829231a_render,
-  GOIconvue_type_template_id_7829231a_staticRenderFns,
+  GOIconvue_type_template_id_107ffafb_render,
+  GOIconvue_type_template_id_107ffafb_staticRenderFns,
   false,
   null,
   null,
@@ -1261,12 +1321,12 @@ var GOText_component = normalizeComponent(
 )
 
 /* harmony default export */ var GOText = (GOText_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/input-output/GOTextField.vue?vue&type=template&id=4bfec701&
-var GOTextFieldvue_type_template_id_4bfec701_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('div',[(_vm.viewMode)?_c('div',{staticClass:"go-text-view"},[_c('v-text-field',{attrs:{"label":_vm.label,"value":_vm.value,"disabled":""}})],1):_vm._e(),(_vm.editMode)?_c('div',[_c('v-text-field',{attrs:{"label":_vm.label,"value":_vm.value,"disabled":_vm.isDisabled},on:{"input":_vm.onInput}})],1):_vm._e()]):_vm._e()}
-var GOTextFieldvue_type_template_id_4bfec701_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"C://Projects//GenerativeObjects//go-front-components//node_modules//.cache//vue-loader","cacheIdentifier":"d0cccd1c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/input-output/GOTextField.vue?vue&type=template&id=476ae6e8&
+var GOTextFieldvue_type_template_id_476ae6e8_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('div',[(_vm.viewMode)?_c('div',{staticClass:"go-text-view"},[_c('v-text-field',{attrs:{"label":_vm.label,"value":_vm.value,"disabled":""}})],1):_vm._e(),(_vm.editMode)?_c('div',[_c('v-text-field',{attrs:{"label":_vm.label,"value":_vm.value,"disabled":_vm.isDisabled},on:{"input":_vm.onInput}})],1):_vm._e()]):_vm._e()}
+var GOTextFieldvue_type_template_id_476ae6e8_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/go-default/input-output/GOTextField.vue?vue&type=template&id=4bfec701&
+// CONCATENATED MODULE: ./src/go-default/input-output/GOTextField.vue?vue&type=template&id=476ae6e8&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/input-output/GOTextField.vue?vue&type=script&lang=js&
 //
@@ -1282,9 +1342,10 @@ var GOTextFieldvue_type_template_id_4bfec701_staticRenderFns = []
 //
 
  // exposes isVisible computed
+ // exposes isDisabled computed
 
 /* harmony default export */ var GOTextFieldvue_type_script_lang_js_ = ({
-    mixins: [visible_prop_mixin],
+    mixins: [visible_prop_mixin, disabled_prop_mixin],
     props: {
         value: [String, Number],
         viewMode: Boolean,
@@ -1321,8 +1382,8 @@ var GOTextFieldvue_type_style_index_0_lang_css_ = __webpack_require__("8mn8");
 
 var GOTextField_component = normalizeComponent(
   input_output_GOTextFieldvue_type_script_lang_js_,
-  GOTextFieldvue_type_template_id_4bfec701_render,
-  GOTextFieldvue_type_template_id_4bfec701_staticRenderFns,
+  GOTextFieldvue_type_template_id_476ae6e8_render,
+  GOTextFieldvue_type_template_id_476ae6e8_staticRenderFns,
   false,
   null,
   null,
