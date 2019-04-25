@@ -6,6 +6,7 @@ import GOButton from './actions/GOButton.vue';
 import GOCheckboxField from './input-output/GOCheckboxField.vue';
 import GOColumnLayout from './containers/GOColumnLayout.vue';
 import GODatePickerField from './input-output/GODatePickerField.vue';
+import GODialog from './containers/GODialog.vue';
 import GOForm from './containers/GOFormWithEdit.vue';
 import GOGrid from './containers/GOGrid.vue';
 import GOGridColumn from './containers/GOGridColumn.vue';
@@ -22,6 +23,7 @@ const componentsToRegister = {
     'go-checkbox': GOCheckboxField,
     'go-column-layout': GOColumnLayout,
     'go-date-field': GODatePickerField,
+    'go-dialog': GODialog,
     'go-form': GOForm,
     'go-grid': GOGrid,
     'go-grid-column': GOGridColumn,
