@@ -71,23 +71,22 @@ export default {
     },
     methods: {
         onCurrentPageNumberChanged(value) {
-            this.$emit("pageChanged", value);
+            this.$emit("page-changed", value);
             this.localPaginationObject.page = value;
         },
         onPaginationUpdated(pagination) {
-            console.log(pagination);
             if (
                 this.pagination &&
                 pagination.page !== this.pagination.currentPageNumber
             ) {
-                this.$emit("pageChanged", pagination.page);
+                this.$emit("page-changed", pagination.page);
             }
             if (
                 this.sort &&
                 (pagination.sortBy !== this.sort.sortColumn ||
                     pagination.descending != this.sort.isDescending)
             ) {
-                this.$emit("sortUpdated", {
+                this.$emit("sort-updated", {
                     sortColumn: pagination.sortBy,
                     isDescending: pagination.descending
                 });
