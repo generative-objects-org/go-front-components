@@ -20,7 +20,7 @@
                 <td :colspan="headers.length" class="text-xs-center">
                     <v-pagination
                         :length="pagination.totalPage"
-                        v-model="localPaginationObject.page"
+                        :value="pagination.currentPageNumber"
                         v-if="pagination.totalPage > 1 && pagination.currentTotal > 0"
                         total-visible="6"
                         @input="onCurrentPageNumberChanged"
@@ -70,17 +70,19 @@ export default {
         }
     },
     methods: {
+        // Called by the <v-pagination>
         onCurrentPageNumberChanged(value) {
-            this.$emit("page-changed", value);
+            // We use this to sync' with <v-data-table> but it is not directly used
+            // by th <v-pagination>
             this.localPaginationObject.page = value;
+
+            // Emitting up to the parent component
+            this.$emit("page-changed", value);
         },
+
+        /// We deal only with sorting here, the pagination is
+        /// handled through the <v-pagination> component
         onPaginationUpdated(pagination) {
-            if (
-                this.pagination &&
-                pagination.page !== this.pagination.currentPageNumber
-            ) {
-                this.$emit("page-changed", pagination.page);
-            }
             if (
                 this.sort &&
                 (pagination.sortBy !== this.sort.sortColumn ||
