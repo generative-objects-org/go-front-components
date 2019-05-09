@@ -855,12 +855,12 @@ var GOFormWithEdit_component = normalizeComponent(
 )
 
 /* harmony default export */ var GOFormWithEdit = (GOFormWithEdit_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5001fecc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOGrid.vue?vue&type=template&id=f7fee998&
-var GOGridvue_type_template_id_f7fee998_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('v-flex',[_c('v-data-table',{staticClass:"elevation-1",attrs:{"items":_vm.dataToDisplay,"headers":_vm.headers,"loading":_vm.loading,"total-items":_vm.totalItems,"pagination":_vm.localPaginationObject,"hide-actions":"","disable-initial-sort":""},on:{"update:pagination":[function($event){_vm.localPaginationObject=$event},_vm.onPaginationUpdated]},scopedSlots:_vm._u([{key:"items",fn:function(props){return [_c('tr',[_vm._t("default",null,{"item":props.item})],2)]}}],null,true)},[(_vm.pagination && _vm.pagination.isPaginationEnabled)?_c('template',{slot:"footer"},[_c('td',{staticClass:"text-xs-center",attrs:{"colspan":_vm.headers.length}},[(_vm.pagination.totalPage > 1 && _vm.pagination.currentTotal > 0)?_c('v-pagination',{attrs:{"length":_vm.pagination.totalPage,"total-visible":"6"},on:{"input":_vm.onCurrentPageNumberChanged},model:{value:(_vm.localPaginationObject.page),callback:function ($$v) {_vm.$set(_vm.localPaginationObject, "page", $$v)},expression:"localPaginationObject.page"}}):_vm._e()],1)]):_vm._e()],2),_vm._t("grid-actions")],2):_vm._e()}
-var GOGridvue_type_template_id_f7fee998_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5001fecc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOGrid.vue?vue&type=template&id=b70bc13c&
+var GOGridvue_type_template_id_b70bc13c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('v-flex',[_c('v-data-table',{staticClass:"elevation-1",attrs:{"items":_vm.dataToDisplay,"headers":_vm.headers,"loading":_vm.loading,"total-items":_vm.totalItems,"pagination":_vm.localPaginationObject,"hide-actions":"","disable-initial-sort":""},on:{"update:pagination":[function($event){_vm.localPaginationObject=$event},_vm.onPaginationUpdated]},scopedSlots:_vm._u([{key:"items",fn:function(props){return [_c('tr',[_vm._t("default",null,{"item":props.item})],2)]}}],null,true)},[(_vm.pagination && _vm.pagination.isPaginationEnabled)?_c('template',{slot:"footer"},[_c('td',{staticClass:"text-xs-center",attrs:{"colspan":_vm.headers.length}},[(_vm.pagination.totalPage > 1 && _vm.pagination.currentTotal > 0)?_c('v-pagination',{attrs:{"length":_vm.pagination.totalPage,"value":_vm.pagination.currentPageNumber,"total-visible":"6"},on:{"input":_vm.onCurrentPageNumberChanged}}):_vm._e()],1)]):_vm._e()],2),_vm._t("grid-actions")],2):_vm._e()}
+var GOGridvue_type_template_id_b70bc13c_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/go-default/containers/GOGrid.vue?vue&type=template&id=f7fee998&
+// CONCATENATED MODULE: ./src/go-default/containers/GOGrid.vue?vue&type=template&id=b70bc13c&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOGrid.vue?vue&type=script&lang=js&
 //
@@ -935,17 +935,19 @@ var GOGridvue_type_template_id_f7fee998_staticRenderFns = []
         }
     },
     methods: {
+        // Called by the <v-pagination>
         onCurrentPageNumberChanged(value) {
-            this.$emit("page-changed", value);
+            // We use this to sync' with <v-data-table> but it is not directly used
+            // by th <v-pagination>
             this.localPaginationObject.page = value;
+
+            // Emitting up to the parent component
+            this.$emit("page-changed", value);
         },
+
+        /// We deal only with sorting here, the pagination is
+        /// handled through the <v-pagination> component
         onPaginationUpdated(pagination) {
-            if (
-                this.pagination &&
-                pagination.page !== this.pagination.currentPageNumber
-            ) {
-                this.$emit("page-changed", pagination.page);
-            }
             if (
                 this.sort &&
                 (pagination.sortBy !== this.sort.sortColumn ||
@@ -972,8 +974,8 @@ var GOGridvue_type_template_id_f7fee998_staticRenderFns = []
 
 var GOGrid_component = normalizeComponent(
   containers_GOGridvue_type_script_lang_js_,
-  GOGridvue_type_template_id_f7fee998_render,
-  GOGridvue_type_template_id_f7fee998_staticRenderFns,
+  GOGridvue_type_template_id_b70bc13c_render,
+  GOGridvue_type_template_id_b70bc13c_staticRenderFns,
   false,
   null,
   null,
