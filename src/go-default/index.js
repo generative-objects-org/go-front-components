@@ -28,7 +28,7 @@ const componentsToRegister = {
     'go-form': GOForm,
     'go-grid': GOGrid,
     'go-grid-column': GOGridColumn,
-    'go-hierarchica-container': GOHierarchicalContainer,
+    'go-hierarchy-container-widget': GOHierarchicalContainer,
     'go-icon': GOIcon,
     'go-selection-field': GOSelectionField,
     'go-tab': GOTab,
