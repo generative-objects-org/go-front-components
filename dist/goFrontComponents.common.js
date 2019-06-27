@@ -1017,6 +1017,48 @@ var GOGridColumn_component = normalizeComponent(
 )
 
 /* harmony default export */ var GOGridColumn = (GOGridColumn_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5001fecc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOHierarchicalContainer.vue?vue&type=template&id=6058a7d8&
+var GOHierarchicalContainervue_type_template_id_6058a7d8_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._t("default")],2)}
+var GOHierarchicalContainervue_type_template_id_6058a7d8_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/go-default/containers/GOHierarchicalContainer.vue?vue&type=template&id=6058a7d8&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOHierarchicalContainer.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+
+ // exposes isVisible computed
+/* harmony default export */ var GOHierarchicalContainervue_type_script_lang_js_ = ({
+    mixins: [visible_prop_mixin]
+});
+
+// CONCATENATED MODULE: ./src/go-default/containers/GOHierarchicalContainer.vue?vue&type=script&lang=js&
+ /* harmony default export */ var containers_GOHierarchicalContainervue_type_script_lang_js_ = (GOHierarchicalContainervue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/go-default/containers/GOHierarchicalContainer.vue
+
+
+
+
+
+/* normalize component */
+
+var GOHierarchicalContainer_component = normalizeComponent(
+  containers_GOHierarchicalContainervue_type_script_lang_js_,
+  GOHierarchicalContainervue_type_template_id_6058a7d8_render,
+  GOHierarchicalContainervue_type_template_id_6058a7d8_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var GOHierarchicalContainer = (GOHierarchicalContainer_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5001fecc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/actions/GOIcon.vue?vue&type=template&id=107ffafb&
 var GOIconvue_type_template_id_107ffafb_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('v-btn',{staticClass:"mx-0",attrs:{"icon":"","disabled":_vm.isDisabled,"loading":_vm.isLoading},on:{"click":_vm.clickMethod}},[_c('v-icon',[_vm._v(_vm._s(_vm.iconName))])],1):_vm._e()}
 var GOIconvue_type_template_id_107ffafb_staticRenderFns = []
@@ -1378,6 +1420,7 @@ var GOTextField_component = normalizeComponent(
 
 
 
+
 const componentsToRegister = {
     'go-breadcrumb': GOBreadCrumb,
     'go-button': GOButton,
@@ -1388,6 +1431,7 @@ const componentsToRegister = {
     'go-form': GOFormWithEdit,
     'go-grid': GOGrid,
     'go-grid-column': GOGridColumn,
+    'go-hierarchica-container': GOHierarchicalContainer,
     'go-icon': GOIcon,
     'go-selection-field': GOSelectionField,
     'go-tab': GOTab,

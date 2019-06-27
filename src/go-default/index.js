@@ -10,6 +10,7 @@ import GODialog from './containers/GODialog.vue';
 import GOForm from './containers/GOFormWithEdit.vue';
 import GOGrid from './containers/GOGrid.vue';
 import GOGridColumn from './containers/GOGridColumn.vue';
+import GOHierarchicalContainer from './containers/GOHierarchicalContainer.vue';
 import GOIcon from './actions/GOIcon.vue';
 import GOSelectionField from './selection/GOSelectionField.vue';
 import GOTab from './containers/GOTab';
@@ -27,6 +28,7 @@ const componentsToRegister = {
     'go-form': GOForm,
     'go-grid': GOGrid,
     'go-grid-column': GOGridColumn,
+    'go-hierarchica-container': GOHierarchicalContainer,
     'go-icon': GOIcon,
     'go-selection-field': GOSelectionField,
     'go-tab': GOTab,
