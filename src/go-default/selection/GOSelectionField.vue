@@ -1,11 +1,11 @@
 <template>
     <div v-if="isVisible">
-        <div v-if="viewMode" class="go-text-view">
-            <v-select :items="dataCollection" :value="value" :label="label" disabled></v-select>
+        <div v-if="viewMode">
+            <v-select :items="computedDataCollection" :value="value" :label="label" disabled></v-select>
         </div>
         <div v-if="editMode">
             <v-select
-                :items="dataCollection"
+                :items="computedDataCollection"
                 :value="value"
                 :label="label"
                 @change="onChange"
@@ -27,7 +27,8 @@ export default {
         viewMode: Boolean,
         label: String,
         dataCollection: Array, // text / value collection
-        loading: Boolean
+        loading: Boolean,
+        textSelector: Function
     },
     data() {
         return {};
@@ -35,6 +36,23 @@ export default {
     computed: {
         editMode() {
             return !this.viewMode;
+        },
+        computedDataCollection() {
+            if(!this.dataCollection)
+                return [];
+
+            if(!this.textSelector)
+                return this.dataCollection
+            
+            if(this.dataCollection.length === 0)
+                return [];
+
+            return this.dataCollection.map(elt => {
+                return {
+                    text: this.textSelector(elt),
+                    value: elt.pkFiedValue // Defined on the model
+                }
+            })
         }
     },
     methods: {

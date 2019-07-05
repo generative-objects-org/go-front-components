@@ -489,12 +489,12 @@ var GOCheckboxField_component = normalizeComponent(
 )
 
 /* harmony default export */ var GOCheckboxField = (GOCheckboxField_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5001fecc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOColumnLayout.vue?vue&type=template&id=714f0bb4&
-var GOColumnLayoutvue_type_template_id_714f0bb4_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-layout',{attrs:{"row":""}},_vm._l((this.numberOfColumns),function(i){return _c('v-flex',{key:i,staticClass:"ma-1",class:_vm.xsValue},[_vm._t('column-' + i)],2)}),1)}
-var GOColumnLayoutvue_type_template_id_714f0bb4_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5001fecc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOColumnLayout.vue?vue&type=template&id=08e8a3d7&
+var GOColumnLayoutvue_type_template_id_08e8a3d7_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-layout',{attrs:{"row":""}},_vm._l((this.numberOfColumns),function(i){return _c('v-flex',{key:i,staticClass:"ma-1",class:_vm.xsValue},[_vm._t('column-' + i)],2)}),1)}
+var GOColumnLayoutvue_type_template_id_08e8a3d7_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/go-default/containers/GOColumnLayout.vue?vue&type=template&id=714f0bb4&
+// CONCATENATED MODULE: ./src/go-default/containers/GOColumnLayout.vue?vue&type=template&id=08e8a3d7&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOColumnLayout.vue?vue&type=script&lang=js&
 //
@@ -551,8 +551,8 @@ var GOColumnLayoutvue_type_template_id_714f0bb4_staticRenderFns = []
 
 var GOColumnLayout_component = normalizeComponent(
   containers_GOColumnLayoutvue_type_script_lang_js_,
-  GOColumnLayoutvue_type_template_id_714f0bb4_render,
-  GOColumnLayoutvue_type_template_id_714f0bb4_staticRenderFns,
+  GOColumnLayoutvue_type_template_id_08e8a3d7_render,
+  GOColumnLayoutvue_type_template_id_08e8a3d7_staticRenderFns,
   false,
   null,
   null,
@@ -1124,12 +1124,12 @@ var GOIcon_component = normalizeComponent(
 )
 
 /* harmony default export */ var GOIcon = (GOIcon_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5001fecc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/selection/GOSelectionField.vue?vue&type=template&id=77520120&
-var GOSelectionFieldvue_type_template_id_77520120_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('div',[(_vm.viewMode)?_c('div',{staticClass:"go-text-view"},[_c('v-select',{attrs:{"items":_vm.dataCollection,"value":_vm.value,"label":_vm.label,"disabled":""}})],1):_vm._e(),(_vm.editMode)?_c('div',[_c('v-select',{attrs:{"items":_vm.dataCollection,"value":_vm.value,"label":_vm.label,"loading":_vm.loading,"disabled":_vm.isDisabled},on:{"change":_vm.onChange}})],1):_vm._e()]):_vm._e()}
-var GOSelectionFieldvue_type_template_id_77520120_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5001fecc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/selection/GOSelectionField.vue?vue&type=template&id=63855070&
+var GOSelectionFieldvue_type_template_id_63855070_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('div',[(_vm.viewMode)?_c('div',[_c('v-select',{attrs:{"items":_vm.computedDataCollection,"value":_vm.value,"label":_vm.label,"disabled":""}})],1):_vm._e(),(_vm.editMode)?_c('div',[_c('v-select',{attrs:{"items":_vm.computedDataCollection,"value":_vm.value,"label":_vm.label,"loading":_vm.loading,"disabled":_vm.isDisabled},on:{"change":_vm.onChange}})],1):_vm._e()]):_vm._e()}
+var GOSelectionFieldvue_type_template_id_63855070_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/go-default/selection/GOSelectionField.vue?vue&type=template&id=77520120&
+// CONCATENATED MODULE: ./src/go-default/selection/GOSelectionField.vue?vue&type=template&id=63855070&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/selection/GOSelectionField.vue?vue&type=script&lang=js&
 //
@@ -1161,7 +1161,8 @@ var GOSelectionFieldvue_type_template_id_77520120_staticRenderFns = []
         viewMode: Boolean,
         label: String,
         dataCollection: Array, // text / value collection
-        loading: Boolean
+        loading: Boolean,
+        textSelector: Function
     },
     data() {
         return {};
@@ -1169,6 +1170,23 @@ var GOSelectionFieldvue_type_template_id_77520120_staticRenderFns = []
     computed: {
         editMode() {
             return !this.viewMode;
+        },
+        computedDataCollection() {
+            if(!this.dataCollection)
+                return [];
+
+            if(!this.textSelector)
+                return this.dataCollection
+            
+            if(this.dataCollection.length === 0)
+                return [];
+
+            return this.dataCollection.map(elt => {
+                return {
+                    text: this.textSelector(elt),
+                    value: elt.pkFiedValue // Defined on the model
+                }
+            })
         }
     },
     methods: {
@@ -1191,8 +1209,8 @@ var GOSelectionFieldvue_type_template_id_77520120_staticRenderFns = []
 
 var GOSelectionField_component = normalizeComponent(
   selection_GOSelectionFieldvue_type_script_lang_js_,
-  GOSelectionFieldvue_type_template_id_77520120_render,
-  GOSelectionFieldvue_type_template_id_77520120_staticRenderFns,
+  GOSelectionFieldvue_type_template_id_63855070_render,
+  GOSelectionFieldvue_type_template_id_63855070_staticRenderFns,
   false,
   null,
   null,
