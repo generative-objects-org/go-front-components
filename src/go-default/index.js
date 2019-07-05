@@ -21,7 +21,7 @@ import GOTextField from './input-output/GOTextField.vue';
 const componentsToRegister = {
     'go-breadcrumb': GOBreadCrumb,
     'go-button': GOButton,
-    'go-checkbox': GOCheckboxField,
+    'go-checkbox-field': GOCheckboxField,
     'go-column-layout': GOColumnLayout,
     'go-date-field': GODatePickerField,
     'go-dialog': GODialog,

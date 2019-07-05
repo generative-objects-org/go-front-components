@@ -489,12 +489,12 @@ var GOCheckboxField_component = normalizeComponent(
 )
 
 /* harmony default export */ var GOCheckboxField = (GOCheckboxField_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5001fecc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOColumnLayout.vue?vue&type=template&id=08e8a3d7&
-var GOColumnLayoutvue_type_template_id_08e8a3d7_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-layout',{attrs:{"row":""}},_vm._l((this.numberOfColumns),function(i){return _c('v-flex',{key:i,staticClass:"ma-1",class:_vm.xsValue},[_vm._t('column-' + i)],2)}),1)}
-var GOColumnLayoutvue_type_template_id_08e8a3d7_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5001fecc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOColumnLayout.vue?vue&type=template&id=714f0bb4&
+var GOColumnLayoutvue_type_template_id_714f0bb4_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-layout',{attrs:{"row":""}},_vm._l((this.numberOfColumns),function(i){return _c('v-flex',{key:i,staticClass:"ma-1",class:_vm.xsValue},[_vm._t('column-' + i)],2)}),1)}
+var GOColumnLayoutvue_type_template_id_714f0bb4_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/go-default/containers/GOColumnLayout.vue?vue&type=template&id=08e8a3d7&
+// CONCATENATED MODULE: ./src/go-default/containers/GOColumnLayout.vue?vue&type=template&id=714f0bb4&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOColumnLayout.vue?vue&type=script&lang=js&
 //
@@ -551,8 +551,8 @@ var GOColumnLayoutvue_type_template_id_08e8a3d7_staticRenderFns = []
 
 var GOColumnLayout_component = normalizeComponent(
   containers_GOColumnLayoutvue_type_script_lang_js_,
-  GOColumnLayoutvue_type_template_id_08e8a3d7_render,
-  GOColumnLayoutvue_type_template_id_08e8a3d7_staticRenderFns,
+  GOColumnLayoutvue_type_template_id_714f0bb4_render,
+  GOColumnLayoutvue_type_template_id_714f0bb4_staticRenderFns,
   false,
   null,
   null,
@@ -1424,7 +1424,7 @@ var GOTextField_component = normalizeComponent(
 const componentsToRegister = {
     'go-breadcrumb': GOBreadCrumb,
     'go-button': GOButton,
-    'go-checkbox': GOCheckboxField,
+    'go-checkbox-field': GOCheckboxField,
     'go-column-layout': GOColumnLayout,
     'go-date-field': GODatePickerField,
     'go-dialog': GODialog,
