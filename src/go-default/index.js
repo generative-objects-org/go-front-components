@@ -1,7 +1,7 @@
 import './index.css';
 import Vue from 'vue';
 
-import GOBreadCrumb from './input-output/GOBreadCrumb.vue';
+import GOBreadCrumb from './view-only/GOBreadCrumb.vue';
 import GOButton from './actions/GOButton.vue';
 import GOCheckboxField from './input-output/GOCheckboxField.vue';
 import GOColumnLayout from './containers/GOColumnLayout.vue';
@@ -15,7 +15,7 @@ import GOIcon from './actions/GOIcon.vue';
 import GOSelectionField from './selection/GOSelectionField.vue';
 import GOTab from './containers/GOTab';
 import GOTabContainer from './containers/GOTabContainer';
-import GOText from './input-output/GOText.vue';
+import GOText from './view-only/GOText.vue';
 import GOTextField from './input-output/GOTextField.vue';
 
 const componentsToRegister = {

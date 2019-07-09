@@ -43,9 +43,10 @@ import {
 } from "../../utils/dateConverters.js";
 import VisiblePropMixin from "@/mixins/visible-prop-mixin"; // exposes isVisible computed
 import DisabledPropMixin from "@/mixins/disabled-prop-mixin"; // exposes isDisabled computed
+import ValidationPropMixin from "@/mixins/validation-prop-mixin"; // adds validation prop & computed
 
 export default {
-    mixins: [VisiblePropMixin, DisabledPropMixin],
+    mixins: [VisiblePropMixin, DisabledPropMixin, ValidationPropMixin],
     props: {
         value: Date,
         viewMode: Boolean,
