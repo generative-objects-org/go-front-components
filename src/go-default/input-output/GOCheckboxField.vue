@@ -9,6 +9,7 @@
                 :input-value="value"
                 v-on:change="onChange"
                 :disabled="isDisabled"
+                :rules="computedValidationRules"
             ></v-checkbox>
         </div>
     </div>

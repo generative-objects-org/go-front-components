@@ -11,6 +11,7 @@
                 @change="onChange"
                 :loading="loading"
                 :disabled="isDisabled"
+                :rules="computedValidationRules"
             ></v-select>
         </div>
     </div>

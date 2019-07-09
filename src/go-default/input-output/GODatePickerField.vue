@@ -23,6 +23,7 @@
                     @blur="onTextFieldBlur"
                     @input="onTextFieldChange"
                     :disabled="isDisabled"
+                    :rules="computedValidationRules"
                 ></v-text-field>
                 <v-date-picker
                     @input="onDateInput"
