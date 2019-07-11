@@ -12,6 +12,7 @@ import GOGrid from './containers/GOGrid.vue';
 import GOGridColumn from './containers/GOGridColumn.vue';
 import GOHierarchicalContainer from './containers/GOHierarchicalContainer.vue';
 import GOIcon from './actions/GOIcon.vue';
+import GORadioGroupField from './selection/GORadioGroupField.vue';
 import GOSelectionField from './selection/GOSelectionField.vue';
 import GOTab from './containers/GOTab';
 import GOTabContainer from './containers/GOTabContainer';
@@ -30,6 +31,7 @@ const componentsToRegister = {
     'go-grid-column': GOGridColumn,
     'go-hierarchy-container-widget': GOHierarchicalContainer,
     'go-icon': GOIcon,
+    'go-radiogroup-field': GORadioGroupField,
     'go-selection-field': GOSelectionField,
     'go-tab': GOTab,
     'go-tab-container': GOTabContainer,

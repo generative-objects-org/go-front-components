@@ -1153,6 +1153,121 @@ var GOIcon_component = normalizeComponent(
 )
 
 /* harmony default export */ var GOIcon = (GOIcon_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5001fecc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/selection/GORadioGroupField.vue?vue&type=template&id=bff82452&
+var GORadioGroupFieldvue_type_template_id_bff82452_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('div',[(_vm.viewMode)?_c('div',[_c('v-radio-group',{attrs:{"value":_vm.value,"mandatory":false,"disabled":"","row":_vm.row,"column":_vm.column}},_vm._l((_vm.computedDataCollection),function(data){return _c('v-radio',{key:data.value,attrs:{"label":data.text,"value":data.value}})}),1)],1):_vm._e(),(_vm.editMode)?_c('div',[_c('v-radio-group',{attrs:{"value":_vm.value,"mandatory":false,"disabled":_vm.isDisabled,"rules":_vm.computedValidationRules,"row":_vm.row,"column":_vm.column},on:{"change":_vm.onChange}},_vm._l((_vm.computedDataCollection),function(data){return _c('v-radio',{key:data.value,attrs:{"label":data.text,"value":data.value}})}),1)],1):_vm._e()]):_vm._e()}
+var GORadioGroupFieldvue_type_template_id_bff82452_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/go-default/selection/GORadioGroupField.vue?vue&type=template&id=bff82452&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/selection/GORadioGroupField.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+ // exposes isVisible computed
+ // exposes isDisabled computed
+ // adds validation prop & computed
+
+/* harmony default export */ var GORadioGroupFieldvue_type_script_lang_js_ = ({
+    mixins: [visible_prop_mixin, disabled_prop_mixin, validation_prop_mixin],
+    props: {
+        value: [Number, String],
+        viewMode: Boolean,
+        dataCollection: Array, // text / value collection
+        loading: Boolean,
+        textSelector: Function,
+        column: { type: Boolean, default: true },
+        row: Boolean
+    },
+    data() {
+        return {
+            radioValue: null
+        };
+    },
+    computed: {
+        editMode() {
+            return !this.viewMode;
+        },
+        computedDataCollection() {
+            if (!this.dataCollection) return [];
+
+            if (!this.textSelector) return this.dataCollection;
+
+            if (this.dataCollection.length === 0) return [];
+
+            return this.dataCollection.map(elt => {
+                return {
+                    text: this.textSelector(elt),
+                    value: elt.pkFiedValue // Defined on the model
+                };
+            });
+        },
+        displayModeColumn() {
+            console.log("column", this.column);
+            return this.column || this.column === undefined;
+        }
+    },
+    methods: {
+        onChange(value) {
+            this.$emit("input", value);
+            this.$emit("select", value);
+        }
+    }
+});
+
+// CONCATENATED MODULE: ./src/go-default/selection/GORadioGroupField.vue?vue&type=script&lang=js&
+ /* harmony default export */ var selection_GORadioGroupFieldvue_type_script_lang_js_ = (GORadioGroupFieldvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/go-default/selection/GORadioGroupField.vue
+
+
+
+
+
+/* normalize component */
+
+var GORadioGroupField_component = normalizeComponent(
+  selection_GORadioGroupFieldvue_type_script_lang_js_,
+  GORadioGroupFieldvue_type_template_id_bff82452_render,
+  GORadioGroupFieldvue_type_template_id_bff82452_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var GORadioGroupField = (GORadioGroupField_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5001fecc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/selection/GOSelectionField.vue?vue&type=template&id=7cc41a0b&
 var GOSelectionFieldvue_type_template_id_7cc41a0b_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('div',[(_vm.viewMode)?_c('div',[_c('v-select',{attrs:{"items":_vm.computedDataCollection,"value":_vm.value,"label":_vm.label,"disabled":""}})],1):_vm._e(),(_vm.editMode)?_c('div',[_c('v-select',{attrs:{"items":_vm.computedDataCollection,"value":_vm.value,"label":_vm.label,"loading":_vm.loading,"disabled":_vm.isDisabled,"rules":_vm.computedValidationRules},on:{"change":_vm.onChange}})],1):_vm._e()]):_vm._e()}
 var GOSelectionFieldvue_type_template_id_7cc41a0b_staticRenderFns = []
@@ -1471,6 +1586,7 @@ var GOTextField_component = normalizeComponent(
 
 
 
+
 const componentsToRegister = {
     'go-breadcrumb': GOBreadCrumb,
     'go-button': GOButton,
@@ -1483,6 +1599,7 @@ const componentsToRegister = {
     'go-grid-column': GOGridColumn,
     'go-hierarchy-container-widget': GOHierarchicalContainer,
     'go-icon': GOIcon,
+    'go-radiogroup-field': GORadioGroupField,
     'go-selection-field': GOSelectionField,
     'go-tab': GOTab,
     'go-tab-container': GOTabContainer,
