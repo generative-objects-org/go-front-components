@@ -1,5 +1,5 @@
 <template>
-    <v-form>
+    <v-form ref="vueForm">
         <slot name="default" v-if="currentItem">
             <!-- Default slot where form content will be injected -->
         </slot>
