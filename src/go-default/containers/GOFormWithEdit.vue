@@ -22,6 +22,17 @@ export default {
             return this.noDataText ? this.noDataText : "";
         }
     },
+    methods: {
+        validate() {
+            return this.$refs.vueForm.validate();
+        },
+        reset() {
+            this.$refs.vueForm.reset();
+        },
+        resetValidation() {
+            this.$refs.vueForm.resetValidation();
+        }
+    },
     mixins: [VisiblePropMixin]
 };
 </script>

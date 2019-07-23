@@ -818,12 +818,12 @@ var GODialog_component = normalizeComponent(
 )
 
 /* harmony default export */ var GODialog = (GODialog_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5001fecc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOFormWithEdit.vue?vue&type=template&id=436b28ac&
-var GOFormWithEditvue_type_template_id_436b28ac_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-form',[(_vm.currentItem)?_vm._t("default"):_vm._e(),(!_vm.currentItem && _vm.noDataTextComp)?_c('div',[_vm._v(_vm._s(_vm.noDataTextComp))]):_vm._e(),_vm._t("form-actions")],2)}
-var GOFormWithEditvue_type_template_id_436b28ac_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5001fecc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOFormWithEdit.vue?vue&type=template&id=6a5aee68&
+var GOFormWithEditvue_type_template_id_6a5aee68_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-form',[(_vm.currentItem)?_vm._t("default"):_vm._e(),(!_vm.currentItem && _vm.noDataTextComp)?_c('div',[_vm._v(_vm._s(_vm.noDataTextComp))]):_vm._e(),_vm._t("form-actions")],2)}
+var GOFormWithEditvue_type_template_id_6a5aee68_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/go-default/containers/GOFormWithEdit.vue?vue&type=template&id=436b28ac&
+// CONCATENATED MODULE: ./src/go-default/containers/GOFormWithEdit.vue?vue&type=template&id=6a5aee68&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/containers/GOFormWithEdit.vue?vue&type=script&lang=js&
 //
@@ -850,6 +850,17 @@ var GOFormWithEditvue_type_template_id_436b28ac_staticRenderFns = []
             return this.noDataText ? this.noDataText : "";
         }
     },
+    methods: {
+        validate() {
+            return this.$refs.vueForm.validate();
+        },
+        reset() {
+            this.$refs.vueForm.reset();
+        },
+        resetValidation() {
+            this.$refs.vueForm.resetValidation();
+        }
+    },
     mixins: [visible_prop_mixin]
 });
 
@@ -865,8 +876,8 @@ var GOFormWithEditvue_type_template_id_436b28ac_staticRenderFns = []
 
 var GOFormWithEdit_component = normalizeComponent(
   containers_GOFormWithEditvue_type_script_lang_js_,
-  GOFormWithEditvue_type_template_id_436b28ac_render,
-  GOFormWithEditvue_type_template_id_436b28ac_staticRenderFns,
+  GOFormWithEditvue_type_template_id_6a5aee68_render,
+  GOFormWithEditvue_type_template_id_6a5aee68_staticRenderFns,
   false,
   null,
   null,
