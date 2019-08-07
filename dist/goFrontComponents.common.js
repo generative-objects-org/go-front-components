@@ -174,12 +174,12 @@ var go_default = __webpack_require__("f729");
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5001fecc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/view-only/GOBreadCrumb.vue?vue&type=template&id=33e650ca&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('v-breadcrumbs',{attrs:{"items":_vm.crumbList},scopedSlots:_vm._u([{key:"item",fn:function(props){return [(props.item.link)?_c('router-link',{attrs:{"to":props.item.link}},[_vm._v(_vm._s(props.item.linkText))]):_vm._e(),(!props.item.link)?_c('span',[_vm._v(_vm._s(props.item.linkText))]):_vm._e()]}}],null,false,1049724585)},[_c('template',{slot:"divider"},[_vm._v(_vm._s(_vm.divider))])],2):_vm._e()}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5001fecc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/selection/GOAutocompleteField.vue?vue&type=template&id=ddf3e7f2&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('div',[(_vm.viewMode)?_c('div',[_c('v-select',{attrs:{"items":_vm.computedDataCollection,"value":_vm.value,"label":_vm.label,"disabled":""}})],1):_vm._e(),(_vm.editMode)?_c('div',[_c('v-autocomplete',{attrs:{"items":_vm.computedDataCollection,"value":_vm.value,"label":_vm.label,"loading":_vm.loading,"disabled":_vm.isDisabled,"rules":_vm.computedValidationRules,"search-input":_vm.searchString,"no-filter":_vm.noFilter,"clearable":""},on:{"change":_vm.onChange,"update:searchInput":function($event){_vm.searchString=$event},"update:search-input":function($event){_vm.searchString=$event}}})],1):_vm._e()]):_vm._e()}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/go-default/view-only/GOBreadCrumb.vue?vue&type=template&id=33e650ca&
+// CONCATENATED MODULE: ./src/go-default/selection/GOAutocompleteField.vue?vue&type=template&id=ddf3e7f2&
 
 // CONCATENATED MODULE: ./src/mixins/visible-prop-mixin.js
 /* harmony default export */ var visible_prop_mixin = ({
@@ -196,7 +196,59 @@ var staticRenderFns = []
         }
     }
 });
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/view-only/GOBreadCrumb.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./src/mixins/disabled-prop-mixin.js
+/* harmony default export */ var disabled_prop_mixin = ({
+    props: {
+        disabled: {
+            type: Boolean,
+            default: undefined
+        }
+    },
+
+    computed: {
+        isDisabled() {
+            return this.disabled !== undefined ? this.disabled : false;
+        }
+    }
+});
+// CONCATENATED MODULE: ./src/utils/vuetify-helpers.js
+function TransformValidationModelToVuetify(ruleArray) {
+    return ruleArray.map(m => {
+        return (value) => m.validation(value) || m.errorMessage
+    })
+}
+// CONCATENATED MODULE: ./src/mixins/validation-prop-mixin.js
+
+
+/* harmony default export */ var validation_prop_mixin = ({
+    props: {
+        validationModel: {
+            type: Array,
+            default: undefined
+        }
+    },
+    computed: {
+        computedValidationRules() {
+            if(this.validationModel && this.validationModel.length > 0)
+                return TransformValidationModelToVuetify(this.validationModel)
+            else 
+                return []
+        }
+    }
+});
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/selection/GOAutocompleteField.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -209,16 +261,67 @@ var staticRenderFns = []
 //
 
  // exposes isVisible computed
-/* harmony default export */ var GOBreadCrumbvue_type_script_lang_js_ = ({
-    mixins: [visible_prop_mixin],
+ // exposes isDisabled computed
+ // adds validation prop & computed
+
+/* harmony default export */ var GOAutocompleteFieldvue_type_script_lang_js_ = ({
+    mixins: [visible_prop_mixin, disabled_prop_mixin, validation_prop_mixin],
     props: {
-        divider: String,
-        crumbList: Array
+        value: [Number, String],
+        viewMode: Boolean,
+        label: String,
+        dataCollection: Array, // text / value collection
+        loading: Boolean,
+        textSelector: Function,
+        searchTerm: String,
+        loadAll: {
+            type: Boolean,
+            default: true
+        }
+    },
+    data() {
+        return {
+            searchString: null
+        };
+    },
+    computed: {
+        editMode() {
+            return !this.viewMode;
+        },
+        computedDataCollection() {
+            if (!this.dataCollection) return [];
+
+            if (!this.textSelector) return this.dataCollection;
+
+            if (this.dataCollection.length === 0) return [];
+
+            return this.dataCollection.map(elt => {
+                return {
+                    text: this.textSelector(elt),
+                    value: elt.pkFiedValue // Defined on the model
+                };
+            });
+        },
+        noFilter() {
+            return !this.loadAll; // if not "load all", filtering is done server-side
+        }
+    },
+    methods: {
+        onChange(value) {
+            this.$emit("input", value);
+            this.$emit("select", value);
+        }
+    },
+    watch: {
+        // Bubbling up to triger search
+        searchString(newValue, oldValue) {
+            this.$emit("update:search-term", newValue);
+        }
     }
 });
 
-// CONCATENATED MODULE: ./src/go-default/view-only/GOBreadCrumb.vue?vue&type=script&lang=js&
- /* harmony default export */ var view_only_GOBreadCrumbvue_type_script_lang_js_ = (GOBreadCrumbvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/go-default/selection/GOAutocompleteField.vue?vue&type=script&lang=js&
+ /* harmony default export */ var selection_GOAutocompleteFieldvue_type_script_lang_js_ = (GOAutocompleteFieldvue_type_script_lang_js_); 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 /* globals __VUE_SSR_CONTEXT__ */
 
@@ -314,7 +417,7 @@ function normalizeComponent (
   }
 }
 
-// CONCATENATED MODULE: ./src/go-default/view-only/GOBreadCrumb.vue
+// CONCATENATED MODULE: ./src/go-default/selection/GOAutocompleteField.vue
 
 
 
@@ -323,7 +426,7 @@ function normalizeComponent (
 /* normalize component */
 
 var component = normalizeComponent(
-  view_only_GOBreadCrumbvue_type_script_lang_js_,
+  selection_GOAutocompleteFieldvue_type_script_lang_js_,
   render,
   staticRenderFns,
   false,
@@ -333,7 +436,57 @@ var component = normalizeComponent(
   
 )
 
-/* harmony default export */ var GOBreadCrumb = (component.exports);
+/* harmony default export */ var GOAutocompleteField = (component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5001fecc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/view-only/GOBreadCrumb.vue?vue&type=template&id=33e650ca&
+var GOBreadCrumbvue_type_template_id_33e650ca_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('v-breadcrumbs',{attrs:{"items":_vm.crumbList},scopedSlots:_vm._u([{key:"item",fn:function(props){return [(props.item.link)?_c('router-link',{attrs:{"to":props.item.link}},[_vm._v(_vm._s(props.item.linkText))]):_vm._e(),(!props.item.link)?_c('span',[_vm._v(_vm._s(props.item.linkText))]):_vm._e()]}}],null,false,1049724585)},[_c('template',{slot:"divider"},[_vm._v(_vm._s(_vm.divider))])],2):_vm._e()}
+var GOBreadCrumbvue_type_template_id_33e650ca_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/go-default/view-only/GOBreadCrumb.vue?vue&type=template&id=33e650ca&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/view-only/GOBreadCrumb.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+ // exposes isVisible computed
+/* harmony default export */ var GOBreadCrumbvue_type_script_lang_js_ = ({
+    mixins: [visible_prop_mixin],
+    props: {
+        divider: String,
+        crumbList: Array
+    }
+});
+
+// CONCATENATED MODULE: ./src/go-default/view-only/GOBreadCrumb.vue?vue&type=script&lang=js&
+ /* harmony default export */ var view_only_GOBreadCrumbvue_type_script_lang_js_ = (GOBreadCrumbvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/go-default/view-only/GOBreadCrumb.vue
+
+
+
+
+
+/* normalize component */
+
+var GOBreadCrumb_component = normalizeComponent(
+  view_only_GOBreadCrumbvue_type_script_lang_js_,
+  GOBreadCrumbvue_type_template_id_33e650ca_render,
+  GOBreadCrumbvue_type_template_id_33e650ca_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var GOBreadCrumb = (GOBreadCrumb_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5001fecc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/actions/GOButton.vue?vue&type=template&id=3d699e28&
 var GOButtonvue_type_template_id_3d699e28_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('v-btn',{attrs:{"disabled":_vm.isDisabled,"loading":_vm.isLoading,"ripple":""},on:{"click":_vm.clickMethod}},[_vm._v(_vm._s(_vm.label))]):_vm._e()}
 var GOButtonvue_type_template_id_3d699e28_staticRenderFns = []
@@ -341,21 +494,6 @@ var GOButtonvue_type_template_id_3d699e28_staticRenderFns = []
 
 // CONCATENATED MODULE: ./src/go-default/actions/GOButton.vue?vue&type=template&id=3d699e28&
 
-// CONCATENATED MODULE: ./src/mixins/disabled-prop-mixin.js
-/* harmony default export */ var disabled_prop_mixin = ({
-    props: {
-        disabled: {
-            type: Boolean,
-            default: undefined
-        }
-    },
-
-    computed: {
-        isDisabled() {
-            return this.disabled !== undefined ? this.disabled : false;
-        }
-    }
-});
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/actions/GOButton.vue?vue&type=script&lang=js&
 //
 //
@@ -418,31 +556,6 @@ var GOCheckboxFieldvue_type_template_id_38db3788_staticRenderFns = []
 
 // CONCATENATED MODULE: ./src/go-default/input-output/GOCheckboxField.vue?vue&type=template&id=38db3788&
 
-// CONCATENATED MODULE: ./src/utils/vuetify-helpers.js
-function TransformValidationModelToVuetify(ruleArray) {
-    return ruleArray.map(m => {
-        return (value) => m.validation(value) || m.errorMessage
-    })
-}
-// CONCATENATED MODULE: ./src/mixins/validation-prop-mixin.js
-
-
-/* harmony default export */ var validation_prop_mixin = ({
-    props: {
-        validationModel: {
-            type: Array,
-            default: undefined
-        }
-    },
-    computed: {
-        computedValidationRules() {
-            if(this.validationModel && this.validationModel.length > 0)
-                return TransformValidationModelToVuetify(this.validationModel)
-            else 
-                return []
-        }
-    }
-});
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/input-output/GOCheckboxField.vue?vue&type=script&lang=js&
 //
 //
@@ -1605,7 +1718,9 @@ var GOTextField_component = normalizeComponent(
 
 
 
+
 const componentsToRegister = {
+    'go-autocomplete': GOAutocompleteField,
     'go-breadcrumb': GOBreadCrumb,
     'go-button': GOButton,
     'go-checkbox-field': GOCheckboxField,

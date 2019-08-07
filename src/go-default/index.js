@@ -1,6 +1,7 @@
 import './index.css';
 import Vue from 'vue';
 
+import GOAutocompleteField from './selection/GOAutocompleteField.vue';
 import GOBreadCrumb from './view-only/GOBreadCrumb.vue';
 import GOButton from './actions/GOButton.vue';
 import GOCheckboxField from './input-output/GOCheckboxField.vue';
@@ -20,6 +21,7 @@ import GOText from './view-only/GOText.vue';
 import GOTextField from './input-output/GOTextField.vue';
 
 const componentsToRegister = {
+    'go-autocomplete': GOAutocompleteField,
     'go-breadcrumb': GOBreadCrumb,
     'go-button': GOButton,
     'go-checkbox-field': GOCheckboxField,
