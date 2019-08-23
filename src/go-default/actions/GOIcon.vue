@@ -18,7 +18,6 @@ import DisabledPropMixin from "@/mixins/disabled-prop-mixin"; // exposes isDisab
 export default {
     mixins: [VisiblePropMixin, DisabledPropMixin],
     props: {
-        click: Function,
         iconName: String,
         loading: Boolean
     },
@@ -26,9 +25,12 @@ export default {
     computed: {
         isLoading() {
             return this.loading !== undefined ? this.loading : false;
-        },
-        clickMethod() {
-            return this.click !== undefined ? this.click : () => {};
+        }
+    },
+
+    methods: {
+        clickMethod(...args) {
+            this.$emit("click", args);
         }
     }
 };
