@@ -1230,6 +1230,51 @@ var GOHierarchicalContainer_component = normalizeComponent(
 )
 
 /* harmony default export */ var GOHierarchicalContainer = (GOHierarchicalContainer_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5001fecc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/view-only/GOHtml.vue?vue&type=template&id=aa6c7b3a&scoped=true&
+var GOHtmlvue_type_template_id_aa6c7b3a_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{domProps:{"innerHTML":_vm._s(_vm.value)}})}
+var GOHtmlvue_type_template_id_aa6c7b3a_scoped_true_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/go-default/view-only/GOHtml.vue?vue&type=template&id=aa6c7b3a&scoped=true&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/view-only/GOHtml.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+
+
+ // exposes isVisible computed
+
+/* harmony default export */ var GOHtmlvue_type_script_lang_js_ = ({
+    mixins: [visible_prop_mixin],
+    props: {
+        value: [String, Number, Boolean]
+    }
+});
+
+// CONCATENATED MODULE: ./src/go-default/view-only/GOHtml.vue?vue&type=script&lang=js&
+ /* harmony default export */ var view_only_GOHtmlvue_type_script_lang_js_ = (GOHtmlvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/go-default/view-only/GOHtml.vue
+
+
+
+
+
+/* normalize component */
+
+var GOHtml_component = normalizeComponent(
+  view_only_GOHtmlvue_type_script_lang_js_,
+  GOHtmlvue_type_template_id_aa6c7b3a_scoped_true_render,
+  GOHtmlvue_type_template_id_aa6c7b3a_scoped_true_staticRenderFns,
+  false,
+  null,
+  "aa6c7b3a",
+  null
+  
+)
+
+/* harmony default export */ var GOHtml = (GOHtml_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5001fecc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/go-default/actions/GOIcon.vue?vue&type=template&id=3917f5eb&
 var GOIconvue_type_template_id_3917f5eb_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isVisible)?_c('v-btn',{staticClass:"mx-0",attrs:{"icon":"","disabled":_vm.isDisabled,"loading":_vm.isLoading},on:{"click":_vm.clickMethod}},[_c('v-icon',[_vm._v(_vm._s(_vm.iconName))])],1):_vm._e()}
 var GOIconvue_type_template_id_3917f5eb_staticRenderFns = []
@@ -1732,6 +1777,7 @@ var GOTextField_component = normalizeComponent(
 
 
 
+
 const componentsToRegister = {
     'go-autocomplete': GOAutocompleteField,
     'go-breadcrumb': GOBreadCrumb,
@@ -1744,6 +1790,7 @@ const componentsToRegister = {
     'go-grid': GOGrid,
     'go-grid-column': GOGridColumn,
     'go-hierarchy-container-widget': GOHierarchicalContainer,
+    'go-html': GOHtml,
     'go-icon': GOIcon,
     'go-radiogroup-field': GORadioGroupField,
     'go-selection-field': GOSelectionField,

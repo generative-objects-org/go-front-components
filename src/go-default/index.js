@@ -12,6 +12,7 @@ import GOForm from './containers/GOFormWithEdit.vue';
 import GOGrid from './containers/GOGrid.vue';
 import GOGridColumn from './containers/GOGridColumn.vue';
 import GOHierarchicalContainer from './containers/GOHierarchicalContainer.vue';
+import GOHtml from './view-only/GOHtml.vue';
 import GOIcon from './actions/GOIcon.vue';
 import GORadioGroupField from './selection/GORadioGroupField.vue';
 import GOSelectionField from './selection/GOSelectionField.vue';
@@ -32,6 +33,7 @@ const componentsToRegister = {
     'go-grid': GOGrid,
     'go-grid-column': GOGridColumn,
     'go-hierarchy-container-widget': GOHierarchicalContainer,
+    'go-html': GOHtml,
     'go-icon': GOIcon,
     'go-radiogroup-field': GORadioGroupField,
     'go-selection-field': GOSelectionField,
