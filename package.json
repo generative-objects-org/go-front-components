@@ -25,7 +25,7 @@
         "vue-template-es2015-compiler": "^1.9.1"
     },
     "peerDependencies": {
-        "go-front-libs": "git+https://git.generativeobjects.com/go-source/go-front-libs.git",
+        "go-front-libs": "git+https://github.com/generative-objects-org/go-front-libs.git",
         "vue": "^2.6.10",
         "vuetify": "^1.5.12"
     },
